@@ -1,0 +1,28 @@
+{
+  "TravelerSTSMod:Sentence": {
+    "NAME": "小句",
+    "DESCRIPTIONS": [
+      "每打出 #b1 张牌，获得 #b1  #y小句 。"
+    ]
+  },
+  "TravelerSTSMod:HeartLock": {
+    "NAME": "心锁",
+    "DESCRIPTIONS": [
+      " #y小句 达到 #b7 后，回到 #b1 并获得 #b",
+      " 点 #y格挡 。"
+    ]
+  },
+  "TravelerSTSMod:Melody": {
+    "NAME": "音律",
+    "DESCRIPTIONS": [
+      " #y小句 达到 #b4 后，抽 #b",
+      " 张牌。"
+    ]
+  },
+  "TravelerSTSMod:Whisper": {
+    "NAME": "低语",
+    "DESCRIPTIONS": [
+      "每次玩家打出牌后，受到等同于当前 #y低语 层数点伤害，之后 #y低语 层数减少 #b1 。 NL #y低语 层数在回合开始时清零。"
+    ]
+  }
+}
