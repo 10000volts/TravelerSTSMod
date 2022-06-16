@@ -1,9 +1,0 @@
-{
-  "TravelerSTSMod:BookAndQuill": {
-    "NAME": "书与笔",
-    "FLAVOR": "自动书写旅程见闻的奇异笔记。",
-    "DESCRIPTIONS": [
-      "每次进入房间，获得 #b1 点 #y笔墨 。 NL 每次打出牌后，获得 #b1  #y小句 。回合开始时 #y小句 数重置为 #b1 。"
-    ]
-  }
-}
