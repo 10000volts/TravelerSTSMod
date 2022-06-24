@@ -21,7 +21,6 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
-import com.megacrit.cardcrawl.relics.Vajra;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.badlogic.gdx.graphics.Color;
 
@@ -29,7 +28,7 @@ import java.util.ArrayList;
 
 public class Traveler extends CustomPlayer {
     // 火堆的人物立绘（行动前）
-    private static final String MY_CHARACTER_SHOULDER_1 = "TravelerSTSModResources/img/char/shoulder1.png";
+    private static final String MY_CHARACTER_SHOULDER_1 = "TravelerSTSModResources/img/char/shoulder.png";
     // 火堆的人物立绘（行动后）
     private static final String MY_CHARACTER_SHOULDER_2 = "TravelerSTSModResources/img/char/shoulder2.png";
     // 人物死亡图像
@@ -172,9 +171,9 @@ public class Traveler extends CustomPlayer {
     public ArrayList<CutscenePanel> getCutscenePanels() {
         ArrayList<CutscenePanel> panels = new ArrayList<>();
         // 两个参数的，第二个参数表示出现图片时播放的音效
-//        panels.add(new CutscenePanel("TravelerSTSModResources/img/char/Victory1.png"), "ATTACK_MAGIC_FAST_1");
-//        panels.add(new CutscenePanel("TravelerSTSModResources/img/char/Victory2.png"));
-//        panels.add(new CutscenePanel("TravelerSTSModResources/img/char/Victory3.png"));
+        panels.add(new CutscenePanel("TravelerSTSModResources/img/char/victory1.png"));
+        panels.add(new CutscenePanel("TravelerSTSModResources/img/char/victory2.png"));
+        panels.add(new CutscenePanel("TravelerSTSModResources/img/char/victory3.png"));
         return panels;
     }
 

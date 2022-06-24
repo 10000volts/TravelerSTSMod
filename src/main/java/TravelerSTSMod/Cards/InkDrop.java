@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -31,8 +32,8 @@ public class InkDrop extends CustomCard {
 
         this.baseDamage = 6;
         this.damage = 6;
-        this.baseMagicNumber = 3;
-        this.magicNumber = 3;
+        this.baseMagicNumber = 2;
+        this.magicNumber = 2;
     }
 
     @Override
@@ -56,10 +57,17 @@ public class InkDrop extends CustomCard {
                  AbstractGameAction.AttackEffect.FIRE));
         // 笔墨充足
         if (BookAndQuill.costInk(p, 1)) {
+            addToBot(new ApplyPowerAction(m, p, new WhisperPower(m, p, this.magicNumber), this.magicNumber));
             addToBot(new DamageAction(m,
                     new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL),
                     AbstractGameAction.AttackEffect.FIRE));
-            addToBot(new ApplyPowerAction(m, p, new WhisperPower(m, p, this.magicNumber), this.magicNumber));
+        }
+    }
+
+    public void triggerOnGlowCheck() {
+        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        if (BookAndQuill.enoughInk(1)) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
     }
 }

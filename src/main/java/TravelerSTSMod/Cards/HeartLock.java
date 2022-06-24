@@ -24,8 +24,8 @@ public class HeartLock extends CustomCard {
 
     public HeartLock()  {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = 4;
-        this.magicNumber = 4;
+        this.baseMagicNumber = 6;
+        this.magicNumber = 6;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -35,7 +35,7 @@ public class HeartLock extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(2);
+            upgradeMagicNumber(3);
         }
     }
 

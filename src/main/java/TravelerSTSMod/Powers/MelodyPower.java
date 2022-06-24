@@ -1,6 +1,5 @@
 package TravelerSTSMod.Powers;
 
-import TravelerSTSMod.Powers.Abstract.SentenceXPower;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -9,7 +8,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class MelodyPower extends SentenceXPower {
+public class MelodyPower extends AbstractPower implements SentencePower.IOnSentenceChanged {
     public static final String POWER_ID = "TravelerSTSMod:Melody";
 
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);

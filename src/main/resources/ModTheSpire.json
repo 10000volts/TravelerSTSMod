@@ -1,10 +1,10 @@
 {
   "modid": "TravelerSTSMod",
   "name": "TravelerSTSMod",
-  "author_list": ["volta"],
+  "author_list": ["vodkakaa"],
   "description": "旅人mod...尝试成为一个最讲理的、最需要思考的mod。不来挑战一下a20吗？",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "sts_version": "03-07-2022",
-  "mts_version": "3.27.0",
+  "mts_version": "3.24.0",
   "dependencies": ["basemod"]
 }

@@ -35,7 +35,8 @@ public class Melody extends CustomCard {
 
     public void upgrade() {
         if (!this.upgraded) {
-            upgradeName();this.isInnate = true;
+            upgradeName();
+            this.isInnate = true;
             this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

@@ -3,6 +3,7 @@ package TravelerSTSMod.Powers;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -10,12 +11,17 @@ import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.PoisonPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
@@ -52,19 +58,34 @@ public class WhisperPower extends AbstractPower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (this.owner.isDeadOrEscaped()) return;
         flash();
         addToBot(new DamageAction(this.owner,
-                new DamageInfo(this.source, this.amount, DamageInfo.DamageType.HP_LOSS),
+                new DamageInfo(this.source, this.amount, DamageInfo.DamageType.THORNS),
                 AbstractGameAction.AttackEffect.FIRE));
-        if (this.amount <= 1) {
+        --this.amount;
+    }
+
+    @Override
+    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
+        super.onAfterUseCard(card, action);
+        if (this.amount <= 0) {
             addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
-        } else {
-            --this.amount;
         }
     }
 
     @Override
     public void atStartOfTurn() {
-        addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+        AbstractPlayer p = AbstractDungeon.player;
+        // 好孩子不要学。我只是懒所以放在了这里，实际上应该放在Power的实现里。
+        if (this.owner.hasPower("TravelerSTSMod:BadOmen")) {
+            return;
+        }
+        if (p.hasPower("TravelerSTSMod:EchoSpell")) {
+            this.amount = this.amount / 2;
+        } else {
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+        }
+
     }
 }

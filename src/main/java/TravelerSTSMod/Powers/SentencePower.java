@@ -1,6 +1,5 @@
 package TravelerSTSMod.Powers;
 
-import TravelerSTSMod.Powers.Abstract.SentenceXPower;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -13,13 +12,16 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import org.apache.commons.lang3.ObjectUtils;
 import org.lwjgl.Sys;
 
+import java.util.ArrayList;
+
 public class SentencePower extends AbstractPower {
+    public interface IOnSentenceChanged {
+        void onSentenceIncreased(AbstractPower sender, int sb, int sa);
+    }
+
     public static final String POWER_ID = "TravelerSTSMod:Sentence";
-
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
-
     public static final String NAME = powerStrings.NAME;
-
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     public SentencePower(AbstractCreature owner) {
@@ -28,6 +30,7 @@ public class SentencePower extends AbstractPower {
         this.owner = owner;
         this.type = PowerType.BUFF;
         this.amount = 1;
+        this.priority = 5;
 
         // 添加一大一小两张能力图
         String path128 = "TravelerSTSModResources/img/powers/128/Sentence.png";
@@ -50,12 +53,19 @@ public class SentencePower extends AbstractPower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
+        flash();
         increaseSentence((AbstractPlayer)this.owner, 1);
     }
 
     @Override
     public void atStartOfTurn() {
         this.amount = 1;
+    }
+
+    @Override
+    public void update(int slot) {
+        super.update(slot);
+
     }
 
     public static void increaseSentence(AbstractPlayer p, int n) {
@@ -73,12 +83,28 @@ public class SentencePower extends AbstractPower {
         }
 
         if (n < 0) return;
-        System.out.println("sxp: ");
+
+        ArrayList<IOnSentenceChanged> l = new ArrayList<>();
         for (AbstractPower pw: p.powers) {
-            if (pw instanceof SentenceXPower) {
-                ((SentenceXPower) pw).onSentenceIncreased(ps, temp, ps.amount);
+            if (pw instanceof IOnSentenceChanged) {
+                // 可能会改变powers，故先缓存
+                l.add((IOnSentenceChanged) pw);
             }
         }
+        for (IOnSentenceChanged i : l) {
+            i.onSentenceIncreased(ps, temp, ps.amount);
+        }
+        l.clear();
+
+        for (AbstractCard c: p.discardPile.group) {
+            if (c instanceof IOnSentenceChanged) {
+                l.add((IOnSentenceChanged) c);
+            }
+        }
+        for (IOnSentenceChanged i : l) {
+            i.onSentenceIncreased(ps, temp, ps.amount);
+        }
+        l.clear();
     }
 
     public static int getSentence(AbstractPlayer p) {

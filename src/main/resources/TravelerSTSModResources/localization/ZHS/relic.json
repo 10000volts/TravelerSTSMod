@@ -5,5 +5,26 @@
     "DESCRIPTIONS": [
       "每次进入房间，获得 #b1 点 #y笔墨 。 NL 每次打出牌后，获得 #b1  #y小句 。回合开始时 #y小句 数重置为 #b1 。"
     ]
+  },
+  "TravelerSTSMod:BlankMovement": {
+    "NAME": "空白乐章",
+    "FLAVOR": "五线谱上什么也没有。触摸它会演奏出令人不安的音乐。",
+    "DESCRIPTIONS": [
+      "每次战斗开始时，给予生命值最高的敌人 #b10 层 #y低语 。"
+    ]
+  },
+  "TravelerSTSMod:MobiusBand": {
+    "NAME": "莫比乌斯带",
+    "FLAVOR": "这个已经被剪断了。",
+    "DESCRIPTIONS": [
+      "回合结束时，若 #y小句 数不低于 #b4 ，下回合开始时额外获得 [E] 。"
+    ]
+  },
+  "TravelerSTSMod:AbyssInkBottle": {
+    "NAME": "深渊墨瓶",
+    "FLAVOR": "只要献上血液，就会得到取之不尽的墨水。",
+    "DESCRIPTIONS": [
+      " #y笔墨 不足时用 #b2 生命值代替。"
+    ]
   }
 }

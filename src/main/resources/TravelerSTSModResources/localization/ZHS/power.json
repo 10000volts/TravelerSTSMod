@@ -22,7 +22,131 @@
   "TravelerSTSMod:Whisper": {
     "NAME": "低语",
     "DESCRIPTIONS": [
-      "每次玩家打出牌后，受到等同于当前 #y低语 层数点伤害，之后 #y低语 层数减少 #b1 。 NL #y低语 层数在回合开始时清零。"
+      "每次玩家打出牌时，造成等同于当前 #y低语 层数点伤害，之后 #y低语 层数减少 #b1 。 NL #y低语 层数在回合结束时清零。"
+    ]
+  },
+  "TravelerSTSMod:WhisperNextTurn": {
+    "NAME": "低语(下回合)",
+    "DESCRIPTIONS": [
+      "下回合开始时，获得 #b",
+      " 层 #y低语 。"
+    ]
+  },
+  "TravelerSTSMod:EchoSpell": {
+    "NAME": "回声咒语",
+    "DESCRIPTIONS": [
+      "在回合结束时 #y低语 层数不会重置为0而是减半。"
+    ]
+  },
+  "TravelerSTSMod:SpellAmplify": {
+    "NAME": "咒语颂唱",
+    "DESCRIPTIONS": [
+      "每次打出其他 #y咒语 牌后， #y小句 + #b",
+      " 。"
+    ]
+  },
+  "TravelerSTSMod:Destiny": {
+    "NAME": "命运",
+    "DESCRIPTIONS": [
+      "回合结束时，选择弃牌堆中 #b",
+      " 张牌回到抽牌堆顶。"
+    ]
+  },
+  "TravelerSTSMod:GazeOfAbyss": {
+    "NAME": "深渊凝视",
+    "DESCRIPTIONS": [
+      "回合结束时，每有 #b1 小句，下次回合开始时给予随机敌人该数目层的 #y低语 。"
+    ]
+  },
+  "TravelerSTSMod:GazeOfAbyssUpgraded": {
+    "NAME": "深渊凝视(升级)",
+    "DESCRIPTIONS": [
+      "回合结束时，每有 #b1 小句，下次回合开始时给予所有敌人该数目层的 #y低语 。"
+    ]
+  },
+  "TravelerSTSMod:Degenerate": {
+    "NAME": "堕落",
+    "DESCRIPTIONS": [
+      "人格牌的 #y行动 效果额外触发 #b",
+      " 次。"
+    ]
+  },
+  "TravelerSTSMod:VoiceOfDark": {
+    "NAME": "黑暗之声",
+    "DESCRIPTIONS": [
+      "回合结束时，所有敌人获得与身上 #y低语 层数相同的 #y中毒 。"
+    ]
+  },
+  "TravelerSTSMod:AbsorbSpell": {
+    "NAME": "吸收咒语",
+    "DESCRIPTIONS": [
+      "本回合中被格挡的攻击伤害在下回合开始时转化为格挡。"
+    ]
+  },
+  "TravelerSTSMod:Palindrome": {
+    "NAME": "回文写法",
+    "DESCRIPTIONS": [
+      "本回合中下 #b",
+      " 张打出的 #y咒语 牌将被打出 #b2 次。"
+    ]
+  },
+  "TravelerSTSMod:BloodInk": {
+    "NAME": "血墨",
+    "DESCRIPTIONS": [
+      "耗费笔墨时优先耗费血墨，血墨在回合开始时清空。"
+    ]
+  },
+  "TravelerSTSMod:Chant": {
+    "NAME": "吟唱",
+    "DESCRIPTIONS": [
+      "下回合咒语牌的耗能- #b",
+      " 。"
+    ]
+  },
+  "TravelerSTSMod:ChantComplete": {
+    "NAME": "吟唱完毕",
+    "DESCRIPTIONS": [
+      "本回合咒语牌的耗能- #b",
+      " 。"
+    ]
+  },
+  "TravelerSTSMod:SpellIntensify": {
+    "NAME": "咒语增幅",
+    "DESCRIPTIONS": [
+      "每次打出其他 #y咒语 牌后， 抽 #b",
+      " 张牌。"
+    ]
+  },
+  "TravelerSTSMod:Inking": {
+    "NAME": "着墨",
+    "DESCRIPTIONS": [
+      "本次非首领战斗结束后额外进行 #b1 次选牌。"
+    ]
+  },
+  "TravelerSTSMod:QuickCasting": {
+    "NAME": "快速施法",
+    "DESCRIPTIONS": [
+      " #y咒语 牌耗能变为 #b0 ，打出后消耗。"
+    ]
+  },
+  "TravelerSTSMod:PrideForm": {
+    "NAME": "傲慢形态-人格",
+    "DESCRIPTIONS": [
+      "回合开始时，将 #b",
+      " 张随机 #y人格 牌加入手牌最左侧并获得 #y虚无 。"
+    ]
+  },
+  "TravelerSTSMod:PrideFormUpgraded": {
+    "NAME": "傲慢形态-人格(升级)",
+    "DESCRIPTIONS": [
+      "回合开始时，将 #b",
+      " 张升级过的随机 #y人格 牌加入手牌最左侧并获得 #y虚无 。"
+    ]
+  },
+  "TravelerSTSMod:BadOmen": {
+    "NAME": "凶兆",
+    "DESCRIPTIONS": [
+      "回合开始时 #y低语 层数不会清零。"
     ]
   }
 }
