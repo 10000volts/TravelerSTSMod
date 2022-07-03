@@ -23,11 +23,13 @@ public class SurgeSpell extends SpellCard {
     private static final CardColor COLOR = Traveler.Enums.TRAVELER_CARD;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final int COST = 2;
+    private static final int COST = 1;
 
 
     public SurgeSpell(int influenced) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, influenced);
+
+        this.isSeen = true;
 
         this.exhaust = true;
     }
@@ -36,7 +38,7 @@ public class SurgeSpell extends SpellCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(1);
+            this.upgradeBaseCost(0);
         }
     }
 
@@ -47,6 +49,6 @@ public class SurgeSpell extends SpellCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainEnergyAction(SentencePower.getSentence(p)));
+        addToBot(new GainEnergyAction(SentencePower.getSentence(p) / 2));
     }
 }

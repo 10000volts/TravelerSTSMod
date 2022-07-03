@@ -27,6 +27,8 @@ public class Defend extends CustomCard {
     public Defend() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
+        this.isSeen = true;
+
         this.baseBlock = 5;
         this.tags.add(AbstractCard.CardTags.STARTER_DEFEND);
     }

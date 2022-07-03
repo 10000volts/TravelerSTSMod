@@ -1,5 +1,8 @@
 package TravelerSTSMod.Powers;
 
+import TravelerSTSMod.Cards.BadOmen;
+import TravelerSTSMod.Cards.EchoSpell;
+import TravelerSTSMod.Relics.Phonograph;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -78,10 +81,10 @@ public class WhisperPower extends AbstractPower {
     public void atStartOfTurn() {
         AbstractPlayer p = AbstractDungeon.player;
         // 好孩子不要学。我只是懒所以放在了这里，实际上应该放在Power的实现里。
-        if (this.owner.hasPower("TravelerSTSMod:BadOmen")) {
+        if (this.owner.hasPower(BadOmen.ID)) {
             return;
         }
-        if (p.hasPower("TravelerSTSMod:EchoSpell")) {
+        if (p.hasPower(EchoSpell.ID) || p.hasRelic(Phonograph.ID)) {
             this.amount = this.amount / 2;
         } else {
             addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));

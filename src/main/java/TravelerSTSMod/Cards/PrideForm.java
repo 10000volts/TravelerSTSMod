@@ -2,12 +2,10 @@ package TravelerSTSMod.Cards;
 
 import TravelerSTSMod.Cards.Abstract.PersonalityCard;
 import TravelerSTSMod.Characters.Traveler;
-import TravelerSTSMod.Powers.PrideFormPower;
-import TravelerSTSMod.Powers.PrideFormPowerUpgraded;
-import TravelerSTSMod.Powers.SentencePower;
-import TravelerSTSMod.Powers.SpellAmplifyPower;
+import TravelerSTSMod.Powers.*;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -32,14 +30,21 @@ public class PrideForm extends PersonalityCard {
     public PrideForm(boolean ethereal) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ethereal);
 
+        this.isSeen = true;
+
         this.isEthereal = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (this.upgraded) {
-            addToBot(new ApplyPowerAction(p, p, new PrideFormPowerUpgraded(p, 1), 1));
-        } else {
-            addToBot(new ApplyPowerAction(p, p, new PrideFormPower(p, 1), 1));
+            if (p.hasPower(PrideFormPowerUpgraded.POWER_ID)) return;
+            if (p.hasPower(PrideFormPower.POWER_ID)) {
+                addToBot(new RemoveSpecificPowerAction(p, p, PrideFormPower.POWER_ID));
+            }
+            addToBot(new ApplyPowerAction(p, p, new PrideFormPowerUpgraded(p)));
+        } else if (!p.hasPower(PrideFormPowerUpgraded.POWER_ID)) {
+            if (p.hasPower(PrideFormPower.POWER_ID)) return;
+            addToBot(new ApplyPowerAction(p, p, new PrideFormPower(p)));
         }
         // addToBot(new DrawCardAction(p, this.magicNumber));
     }

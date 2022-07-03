@@ -28,14 +28,18 @@ public class MindShock extends CustomCard {
     public MindShock() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
+        this.isSeen = true;
+
         this.baseMagicNumber = 4;
         this.magicNumber = 4;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-            addToBot(new ApplyPowerAction(mo, p, new WhisperPower(mo, p, this.magicNumber), this.magicNumber,
-                    true, AbstractGameAction.AttackEffect.NONE));
+            if (!mo.isDeadOrEscaped()) {
+                addToBot(new ApplyPowerAction(mo, p, new WhisperPower(mo, p, this.magicNumber), this.magicNumber,
+                        true, AbstractGameAction.AttackEffect.NONE));
+            }
         }
     }
 

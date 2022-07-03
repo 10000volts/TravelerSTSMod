@@ -65,12 +65,12 @@ public class PalindromePower extends AbstractPower {
             AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, card.energyOnUse, true, true), true);
             this.amount--;
             if (this.amount == 0)
-                addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "TravelerSTSMod:Palindrome"));
+                addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
         }
     }
 
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer)
-            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "TravelerSTSMod:Palindrome"));
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
     }
 }

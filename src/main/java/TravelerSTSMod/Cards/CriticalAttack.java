@@ -33,6 +33,8 @@ public class CriticalAttack extends CustomCard {
     public CriticalAttack() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
+        this.isSeen = true;
+
         this.baseDamage = 10;
         this.damage = 10;
         this.baseBlock = 10;

@@ -27,6 +27,9 @@ public class Palindrome extends CustomCard {
 
     public Palindrome() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+
+        this.isSeen = true;
+
         this.baseMagicNumber = 1;
         this.magicNumber = 1;
     }

@@ -28,6 +28,8 @@ public class Sloth extends PersonalityCard {
     public Sloth(boolean ethereal) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ethereal);
 
+        this.isSeen = true;
+
         this.baseMagicNumber = 3;
         this.magicNumber = 3;
     }

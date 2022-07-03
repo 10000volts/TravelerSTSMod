@@ -55,13 +55,13 @@
   "TravelerSTSMod:GazeOfAbyss": {
     "NAME": "深渊凝视",
     "DESCRIPTIONS": [
-      "回合结束时，每有 #b1 小句，下次回合开始时给予随机敌人该数目层的 #y低语 。"
+      "回合结束时，每有 #b1 小句，下次回合开始时给予随机敌人该数目层的 #y低语 。(不可叠加)"
     ]
   },
   "TravelerSTSMod:GazeOfAbyssUpgraded": {
     "NAME": "深渊凝视(升级)",
     "DESCRIPTIONS": [
-      "回合结束时，每有 #b1 小句，下次回合开始时给予所有敌人该数目层的 #y低语 。"
+      "回合结束时，每有 #b1 小句，下次回合开始时给予所有敌人该数目层的 #y低语 。(不可叠加)"
     ]
   },
   "TravelerSTSMod:Degenerate": {
@@ -74,7 +74,7 @@
   "TravelerSTSMod:VoiceOfDark": {
     "NAME": "黑暗之声",
     "DESCRIPTIONS": [
-      "回合结束时，所有敌人获得与身上 #y低语 层数相同的 #y中毒 。"
+      "每当你给予 #y低语 时，给予相同层数的 #y中毒 。"
     ]
   },
   "TravelerSTSMod:AbsorbSpell": {
@@ -93,7 +93,7 @@
   "TravelerSTSMod:BloodInk": {
     "NAME": "血墨",
     "DESCRIPTIONS": [
-      "耗费笔墨时优先耗费血墨，血墨在回合开始时清空。"
+      "耗费笔墨时优先耗费血墨，血墨在回合开始时减少 #b1 点。"
     ]
   },
   "TravelerSTSMod:Chant": {
@@ -132,15 +132,13 @@
   "TravelerSTSMod:PrideForm": {
     "NAME": "傲慢形态-人格",
     "DESCRIPTIONS": [
-      "回合开始时，将 #b",
-      " 张随机 #y人格 牌加入手牌最左侧并获得 #y虚无 。"
+      "回合开始时，将 #b1 张随机 #y人格 牌加入手牌最左侧并获得 #y虚无 。(不可叠加)"
     ]
   },
   "TravelerSTSMod:PrideFormUpgraded": {
     "NAME": "傲慢形态-人格(升级)",
     "DESCRIPTIONS": [
-      "回合开始时，将 #b",
-      " 张升级过的随机 #y人格 牌加入手牌最左侧并获得 #y虚无 。"
+      "回合开始时，将 #b1 张升级过的随机 #y人格 牌加入手牌最左侧并获得 #y虚无 。(不可叠加)"
     ]
   },
   "TravelerSTSMod:BadOmen": {

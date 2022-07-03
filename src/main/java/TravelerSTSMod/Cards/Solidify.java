@@ -29,6 +29,8 @@ public class Solidify extends CustomCard {
     public Solidify() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
+        this.isSeen = true;
+
         this.baseBlock = 0;
         this.baseMagicNumber = 1;
         this.magicNumber = 1;
@@ -36,14 +38,13 @@ public class Solidify extends CustomCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
-        addToBot(new ApplyPowerAction(p, p, new NoDrawPower(p)));
+        // addToBot(new ApplyPowerAction(p, p, new NoDrawPower(p)));
     }
 
-    protected void applyPowersToBlock() {
-        super.applyPowersToBlock();
-        this.block += this.magicNumber * SentencePower.getSentence(AbstractDungeon.player);
-        this.block += this.magicNumber * BookAndQuill.getInk(AbstractDungeon.player);
-        this.isBlockModified = (this.block != this.baseBlock);
+    public void applyPowers() {
+        this.baseBlock = BookAndQuill.getInk(AbstractDungeon.player) * this.magicNumber;
+        super.applyPowers();
+        // this.block += this.magicNumber * SentencePower.getSentence(AbstractDungeon.player);
     }
 
     public AbstractCard makeCopy() {

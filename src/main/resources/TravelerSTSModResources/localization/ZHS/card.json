@@ -5,23 +5,23 @@
   },
   "TravelerSTSMod:Defend": {
     "NAME": "防御",
-    "DESCRIPTION": "获得 !B! 点格挡。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。"
   },
   "TravelerSTSMod:InkDrop": {
     "NAME": "墨滴",
-    "DESCRIPTION": "造成 !D! 点伤害。耗费1笔墨，再造成 !D! 点伤害和 !M! 层 travelerstsmod:低语 。"
+    "DESCRIPTION": "造成 !D! 点伤害。耗费1 travelerstsmod:笔墨 ，再造成 !D! 点伤害和 !M! 层 travelerstsmod:低语 。"
   },
   "TravelerSTSMod:EmptySpell": {
     "NAME": "空灵人格-咒语",
-    "DESCRIPTION": "第4小句：抽 !M! 张牌。 NL  travelerstsmod:行动 ：消耗触发区间内的至多1张牌，本效果直到下回合开始时失效。"
+    "DESCRIPTION": "第4 travelerstsmod:小句 ：抽 !M! 张牌。 NL  travelerstsmod:行动 ：每回合1次，消耗触发区间内的至多1张牌。"
   },
   "TravelerSTSMod:PainSpell": {
     "NAME": "苦痛咒语",
-    "DESCRIPTION": "每有1小句，造成 !D! 点伤害。"
+    "DESCRIPTION": "每有1 travelerstsmod:小句 ，造成 !D! 点伤害。"
   },
   "TravelerSTSMod:SuddenStrike": {
     "NAME": "致死打击",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 第1小句：伤害变为 !M! 倍。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 第1 travelerstsmod:小句 ：伤害变为 !M! 倍。"
   },
   "TravelerSTSMod:TemblorSpell": {
     "NAME": "震颤咒语",
@@ -29,7 +29,7 @@
   },
   "TravelerSTSMod:AmuletSpell": {
     "NAME": "护身咒语",
-    "DESCRIPTION": "造成 !D! 点伤害。小句数达到5时从弃牌堆返回手牌，本回合耗能-1。"
+    "DESCRIPTION": "造成 !D! 点伤害。 travelerstsmod:小句 数达到5时从弃牌堆返回手牌，本回合耗能-1。"
   },
   "TravelerSTSMod:MindSnoop": {
     "NAME": "思维窥探",
@@ -41,7 +41,7 @@
   },
   "TravelerSTSMod:Ghost": {
     "NAME": "阴魂",
-    "DESCRIPTION": "造成 !D! 点伤害。给予 !M! 层 travelerstsmod:低语 。将这张牌放回抽牌堆最上方。"
+    "DESCRIPTION": "造成 !D! 点伤害。给予 !M! 层 travelerstsmod:低语 。将这张牌放回抽牌堆最上方。不能连续打出。"
   },
   "TravelerSTSMod:QuickSpell": {
     "NAME": "速攻咒语",
@@ -49,7 +49,7 @@
   },
   "TravelerSTSMod:InkSplash": {
     "NAME": "泼墨",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。耗费1笔墨，对所有敌人造成 !M! 层 travelerstsmod:低语 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。耗费1 travelerstsmod:笔墨 ，对所有敌人造成 !M! 层 travelerstsmod:低语 。"
   },
   "TravelerSTSMod:SpellStorm": {
     "NAME": "连锁咒语",
@@ -57,21 +57,23 @@
   },
   "TravelerSTSMod:BirthSpell": {
     "NAME": "诞生咒语",
-    "DESCRIPTION": "虚无。 NL 获得1笔墨，回复1生命。 NL 消耗。"
+    "DESCRIPTION": "虚无 。 NL 获得 !M!  travelerstsmod:笔墨 ，回复3生命。 NL 打出后从卡组中移除。",
+    "UPGRADE_DESCRIPTION": "虚无 。 NL 获得 !M!  travelerstsmod:笔墨 ，回复6生命。 NL 打出后从卡组中移除。"
   },
   "TravelerSTSMod:Hypnotize": {
     "NAME": "催眠",
-    "DESCRIPTION": "给予等同于当前小句数层数的 travelerstsmod:低语 。 NL 消耗。",
-    "UPGRADE_DESCRIPTION": "给予1层虚弱和等同于当前小句数层数的 travelerstsmod:低语 。 NL 消耗。"
+    "DESCRIPTION": "给予等同于当前 travelerstsmod:小句 数层数的 travelerstsmod:低语 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "给予1层虚弱和等同于当前 travelerstsmod:小句 数层数的 travelerstsmod:低语 。 NL 消耗 。"
   },
   "TravelerSTSMod:ShuttleSpell": {
     "NAME": "穿梭咒语",
-    "DESCRIPTION": "抽3张牌。 NL 非第1小句：消耗。"
+    "DESCRIPTION": "抽3张牌。 NL 非第1 travelerstsmod:小句 ：消耗"
   },
   "TravelerSTSMod:TurnPages": {
     "NAME": "翻页",
-    "DESCRIPTION": "获得当前小句数的格挡，重置小句数为1。",
-    "UPGRADE_DESCRIPTION": "获得当前小句数+2的格挡，重置小句数为1。"
+    "DESCRIPTION": "获得当前 travelerstsmod:小句 数的 格挡 ，重置 travelerstsmod:小句 数为1。",
+    "UPGRADE_DESCRIPTION": "获得当前 travelerstsmod:小句 数+2的 格挡 ，重置 travelerstsmod:小句 数为1。",
+    "EXTENDED_DESCRIPTION": ["(获得 !B! 点 格挡 )"]
   },
   "TravelerSTSMod:Wisdom": {
     "NAME": "睿智",
@@ -80,28 +82,28 @@
   },
   "TravelerSTSMod:Vacillate": {
     "NAME": "动摇",
-    "DESCRIPTION": "选择1持有 travelerstsmod:低语 的敌人，本回合其力量下降当前小句数点。"
+    "DESCRIPTION": "选择1持有 travelerstsmod:低语 的敌人，本回合其力量下降当前 travelerstsmod:小句 数点。"
   },
   "TravelerSTSMod:BarrierSpell": {
     "NAME": "铁壁咒语",
-    "DESCRIPTION": "获得 !B! 点格挡。 NL 第2小句：获得 !M! 倍格挡。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 第2 travelerstsmod:小句 ：获得 !M! 倍 格挡 。"
   },
   "TravelerSTSMod:Wrath": {
     "NAME": "暴怒人格",
-    "DESCRIPTION": "抽 !M! 张牌。 NL  travelerstsmod:行动 ：获得1 [E] ，本效果直到下回合开始时失效。"
+    "DESCRIPTION": "抽 !M! 张牌。 NL  travelerstsmod:行动 ：每回合1次，获得 [E] 。"
   },
   "TravelerSTSMod:Envy": {
     "NAME": "嫉妒人格",
-    "DESCRIPTION": "抽 !M! 张牌。 NL  travelerstsmod:行动* ：小句数+1。"
+    "DESCRIPTION": "抽 !M! 张牌。 NL  travelerstsmod:行动* ： travelerstsmod:小句 数+1。"
   },
   "TravelerSTSMod:Organize": {
     "NAME": "整理思绪",
-    "DESCRIPTION": "获得 !B! 点格挡。下回合开始时额外获得1 [E] 。",
-    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡。下回合开始时额外获得1 [E] 并抽1张牌。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。下回合开始时额外获得 [E] 。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。下回合开始时额外获得 [E] 并抽1张牌。"
   },
   "TravelerSTSMod:Tribute": {
     "NAME": "献祭",
-    "DESCRIPTION": "失去1点生命，获得 !M! 点 travelerstsmod:血墨 。"
+    "DESCRIPTION": "失去2点生命，获得 !M! 点 travelerstsmod:血墨 。"
   },
   "TravelerSTSMod:DistortingStrike": {
     "NAME": "扭曲打击",
@@ -114,25 +116,20 @@
   },
   "TravelerSTSMod:ExplodeSpell": {
     "NAME": "爆裂咒语",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 第6小句：获得2 [E] 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 第6 travelerstsmod:小句 ：获得2 [E] 。"
   },
   "TravelerSTSMod:CriticalAttack": {
     "NAME": "会心一击",
-    "DESCRIPTION": "每打出2张牌，手牌中的这张牌在本回合耗能-1。 NL 造成 !D! 点伤害，获得 !B! 点格挡。"
+    "DESCRIPTION": "每打出2张牌，手牌中的这张牌在本回合耗能-1。 NL 造成 !D! 点伤害，获得 !B! 点 格挡 。"
   },
   "TravelerSTSMod:Notes": {
     "NAME": "笔记",
-    "DESCRIPTION": "永久记忆1个敌人。若该种敌人已被“笔记”记忆过，对其造成 !D! 点伤害并获得1笔墨。 NL 消耗。"
+    "DESCRIPTION": "永久记忆1个敌人。若该种敌人已被记忆过，造成 !D! 点伤害并获得1 travelerstsmod:笔墨 。 NL 消耗 。"
   },
   "TravelerSTSMod:Recount": {
     "NAME": "诉说",
     "DESCRIPTION": "给予X层 travelerstsmod:低语 。若X>0，打出1张X值为X-1的复制并重复此效果。",
     "UPGRADE_DESCRIPTION": "给予X+1层 travelerstsmod:低语 。若X+1>0，打出1张X值为X-1的复制并重复此效果。"
-  },
-  "TravelerSTSMod:Roam": {
-    "NAME": "漫游",
-    "DESCRIPTION": "抽X张牌，手牌中随机X张牌在本回合打出前耗能变为0。",
-    "UPGRADE_DESCRIPTION": "抽X+1张牌，手牌中随机X+1张牌在本回合打出前耗能变为0。"
   },
   "TravelerSTSMod:MindShock": {
     "NAME": "精神震撼",
@@ -144,52 +141,45 @@
   },
   "TravelerSTSMod:Caustic": {
     "NAME": "腐蚀",
-    "DESCRIPTION": "耗费1笔墨，目标身上的 travelerstsmod:低语 层数翻倍。",
-    "UPGRADE_DESCRIPTION": "耗费1笔墨，目标身上的 travelerstsmod:低语 层数翻倍。在本场战斗中这张牌不再耗费笔墨。"
+    "DESCRIPTION": "耗费1 travelerstsmod:笔墨 ，给予6层 travelerstsmod:低语 。"
   },
   "TravelerSTSMod:MemoryLoss": {
     "NAME": "失忆",
-    "DESCRIPTION": "耗费1笔墨，打出你最后进入弃牌堆的卡。 NL 消耗。",
-    "UPGRADE_DESCRIPTION": "耗费1笔墨，打出你最后进入弃牌堆的卡并在打出后将其从弃牌堆加入手牌。"
+    "DESCRIPTION": "耗费1 travelerstsmod:笔墨 ，打出你最后进入弃牌堆的卡。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "耗费1 travelerstsmod:笔墨 ，打出你最后进入弃牌堆的卡并在打出后加入手牌。"
   },
   "TravelerSTSMod:VajraSpell": {
     "NAME": "金刚咒语",
-    "DESCRIPTION": "消耗1笔墨，获得 !M! 力量、 !M! 敏捷。 NL 消耗。"
+    "DESCRIPTION": "消耗1 travelerstsmod:笔墨 ，获得 !M! 力量、 !M! 敏捷。 NL 消耗 。"
   },
   "TravelerSTSMod:LiteraryTalent": {
     "NAME": "走笔成文",
-    "DESCRIPTION": "消耗1笔墨，获得2 [E] ，抽3张牌。 NL 消耗。",
-    "UPGRADE_DESCRIPTION": "消耗1笔墨，获得2 [E] ，抽3张牌。"
+    "DESCRIPTION": "消耗1 travelerstsmod:笔墨 ，获得2 [E] ，抽3张牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "消耗1 travelerstsmod:笔墨 ，获得2 [E] ，抽3张牌。"
   },
   "TravelerSTSMod:Squeeze": {
     "NAME": "榨取",
-    "DESCRIPTION": "丢弃手牌中所有0费牌，获得等量的 [E] 。"
+    "DESCRIPTION": "丢弃手牌中所有0耗能牌、无法打出的状态牌和诅咒牌，获得等量的 [E] 。"
   },
   "TravelerSTSMod:ThinkHard": {
     "NAME": "苦思",
-    "DESCRIPTION": "抽5张牌。 NL 第4小句：选择至多 !M! 张手牌在本回合保留。"
+    "DESCRIPTION": "抽5张牌。 NL 第2 travelerstsmod:小句 ：选择至多 !M! 张手牌在本回合 保留 。"
   },
   "TravelerSTSMod:SpellIntensify": {
     "NAME": "咒语增幅",
-    "DESCRIPTION": "本回合每打出1张其他咒语牌，抽1张牌。",
-    "UPGRADE_DESCRIPTION": "本回合每打出1张咒语牌，抽1张牌(包括这张牌)。"
+    "DESCRIPTION": "本回合每打出1张其他咒语牌，抽 !M! 张牌。"
   },
   "TravelerSTSMod:SurgeSpell": {
     "NAME": "涌动咒语",
-    "DESCRIPTION": "获得等同于小句数的 [E] 。 NL 消耗。"
-  },
-  "TravelerSTSMod:GeniusStroke": {
-    "NAME": "神来之笔",
-    "DESCRIPTION": "获得2、3或 4小句数。",
-    "UPGRADE_DESCRIPTION": "获得2、3或 4小句数。抽1张牌。"
+    "DESCRIPTION": "获得等同于 travelerstsmod:小句 数一半的 [E] 。 NL 消耗 。"
   },
   "TravelerSTSMod:AbsorbSpell": {
     "NAME": "吸收咒语",
-    "DESCRIPTION": "获得 !B! 点格挡。 NL 第4小句：本回合中被你格挡的攻击伤害在下回合开始时转化为格挡。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 第4 travelerstsmod:小句 ：本回合中被你 格挡 的攻击伤害在下回合开始时转化为 格挡 。"
   },
   "TravelerSTSMod:Sloth": {
     "NAME": "懒惰人格",
-    "DESCRIPTION": "抽2张牌。 NL  travelerstsmod:行动 ：获得 !M! 格挡。"
+    "DESCRIPTION": "抽2张牌。 NL  travelerstsmod:行动 ：获得 !M!  格挡 。"
   },
   "TravelerSTSMod:Lust": {
     "NAME": "色欲人格",
@@ -197,7 +187,7 @@
   },
   "TravelerSTSMod:ContractSpell": {
     "NAME": "契约咒语",
-    "DESCRIPTION": "获得 !B! 点格挡。相邻的所有手牌耗能直到本回合打出前变成0。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。相邻的所有手牌耗能直到本回合打出前变成0。"
   },
   "TravelerSTSMod:BadOmen": {
     "NAME": "凶兆",
@@ -205,73 +195,65 @@
   },
   "TravelerSTSMod:Illusion": {
     "NAME": "幻觉",
-    "DESCRIPTION": "1随机人格卡加入手牌，本回合其耗能变为0。 NL 消耗。"
+    "DESCRIPTION": "1随机人格卡加入手牌，本回合其耗能变为0。 NL 消耗 。"
   },
   "TravelerSTSMod:Solidify": {
     "NAME": "凝固",
-    "DESCRIPTION": "获得 !B! 点格挡。每有1点笔墨，格挡+ !M! 。每有1小句，格挡+ !M! 。本回合不能再抽牌。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。每有1点 travelerstsmod:笔墨 ， 格挡 + !M! 。"
   },
   "TravelerSTSMod:Chant": {
     "NAME": "吟唱",
-    "DESCRIPTION": "第2小句：下回合所有咒语牌的耗能-1。",
-    "UPGRADE_DESCRIPTION": "第6小句：下回合所有咒语牌的耗能-1。"
+    "DESCRIPTION": "第2 travelerstsmod:小句 ：下回合所有咒语牌的耗能-1。",
+    "UPGRADE_DESCRIPTION": "第6 travelerstsmod:小句 ：下回合所有咒语牌的耗能-1。"
   },
   "TravelerSTSMod:Gluttony": {
     "NAME": "暴食人格",
-    "DESCRIPTION": "抽 !M! 张牌。 NL  travelerstsmod:行动 ：在本场战斗中升级触发 travelerstsmod:行动 的牌。"
+    "DESCRIPTION": "抽 !M! 张牌。 NL  travelerstsmod:行动 ：在本场战斗中升级触发 travelerstsmod:行动 的牌。",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL  travelerstsmod:行动 ：在本场战斗中升级触发 travelerstsmod:行动 的牌和触发区间内的所有牌。"
   },
   "TravelerSTSMod:MindSplit": {
     "NAME": "精神分裂",
-    "DESCRIPTION": "给予3层 travelerstsmod:低语 。若这张牌触发了人格牌的 travelerstsmod:行动 效果，则打出后这张牌回到手牌。",
-    "UPGRADE_DESCRIPTION": "给予所有敌人3层 travelerstsmod:低语 。若这张牌触发了人格牌的 travelerstsmod:行动 效果，则打出后这张牌回到手牌。"
+    "DESCRIPTION": "给予 !M! 层 travelerstsmod:低语 。若这张牌触发了 travelerstsmod:行动 效果，则打出后回到手牌，在本场战斗中该数值+2。",
+    "UPGRADE_DESCRIPTION": "给予所有敌人 !M! 层 travelerstsmod:低语 。若这张牌触发了 travelerstsmod:行动 效果，则打出后回到手牌，在本场战斗中该数值+2。"
   },
   "TravelerSTSMod:Inking": {
     "NAME": "着墨",
-    "DESCRIPTION": "虚无。 NL 耗费1笔墨，本次非首领战斗结束后额外进行1次选牌(不可叠加)。",
-    "UPGRADE_DESCRIPTION": "耗费1笔墨，本次非首领战斗结束后额外进行1次选牌(不可叠加)。"
+    "DESCRIPTION": "虚无 。 NL 耗费1 travelerstsmod:笔墨 ，本次非首领战斗结束后额外进行1次选牌(不可叠加)。",
+    "UPGRADE_DESCRIPTION": "耗费1 travelerstsmod:笔墨 ，本次非首领战斗结束后额外进行1次选牌(不可叠加)。"
   },
   "TravelerSTSMod:HeartLock": {
     "NAME": "心锁",
-    "DESCRIPTION": "小句达到7时回到1并获得 !M! 点格挡。"
+    "DESCRIPTION": " travelerstsmod:小句 达到7时回到1并获得 !M! 点 格挡 。"
   },
   "TravelerSTSMod:SpellAmplify": {
     "NAME": "咒语颂唱",
-    "DESCRIPTION": "每次打出其他咒语牌后，小句+ !M! 。"
+    "DESCRIPTION": "每次打出其他咒语牌后， travelerstsmod:小句 + !M! 。"
   },
   "TravelerSTSMod:Melody": {
     "NAME": "音律",
-    "DESCRIPTION": "小句达到4时抽1张牌。",
-    "UPGRADE_DESCRIPTION": "固有。 NL 小句达到4时抽1张牌。"
+    "DESCRIPTION": " travelerstsmod:小句 达到4时抽1张牌。",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL  travelerstsmod:小句 达到4时抽1张牌。"
   },
   "TravelerSTSMod:EchoSpell": {
     "NAME": "回声咒语",
     "DESCRIPTION": "在回合开始时 travelerstsmod:低语 层数不会重置为0而是减半。"
   },
-  "TravelerSTSMod:Destiny": {
-    "NAME": "命运",
-    "DESCRIPTION": "在你的回合结束时选择弃牌堆至多1张牌回到抽牌堆最上方。"
-  },
   "TravelerSTSMod:Swallow": {
     "NAME": "吞噬",
-    "DESCRIPTION": "造成 !D! 点伤害。斩杀时，获得 !M! 笔墨。 NL 消耗。"
+    "DESCRIPTION": "造成 !D! 点伤害。 斩杀 时，获得 !M!  travelerstsmod:笔墨 。 NL 消耗 。"
   },
   "TravelerSTSMod:FromAbyss": {
     "NAME": "来自深渊",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 没有笔墨时，获得1笔墨并造成双倍伤害。"
-  },
-  "TravelerSTSMod:Satori": {
-    "NAME": "顿悟",
-    "DESCRIPTION": "第5小句：所有手牌的耗能在打出前变为0。 NL 消耗。",
-    "UPGRADE_DESCRIPTION": "第5小句：所有手牌的耗能在打出前变为0。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 没有 travelerstsmod:笔墨 时，获得1 travelerstsmod:笔墨 并造成双倍伤害。"
   },
   "TravelerSTSMod:Somniloquy": {
     "NAME": "梦呓",
-    "DESCRIPTION": "抽等同于当前小句数-1的牌。 NL 消耗。",
-    "UPGRADE_DESCRIPTION": "抽等同于当前小句数的牌。 NL 消耗。"
+    "DESCRIPTION": "抽等同于当前 travelerstsmod:小句 数-1的牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "抽等同于当前 travelerstsmod:小句 数的牌。 NL 消耗 。"
   },
   "TravelerSTSMod:TimePassed": {
     "NAME": "沧海桑田",
-    "DESCRIPTION": "在本次战斗中，选择1手牌变为另1手牌的复制。 NL 消耗。",
+    "DESCRIPTION": "在本次战斗中，选择1手牌变为另1手牌的复制。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "在本次战斗中，选择1手牌变为另1手牌的复制。"
   },
   "TravelerSTSMod:Greed": {
@@ -280,16 +262,16 @@
   },
   "TravelerSTSMod:Transcend": {
     "NAME": "维度超越",
-    "DESCRIPTION": "消耗2笔墨，立即结束回合并进行一个额外回合。 NL 消耗。"
+    "DESCRIPTION": "消耗2 travelerstsmod:笔墨 ，立即结束回合并进行一个额外回合。 NL 消耗 。"
   },
   "TravelerSTSMod:Alchemy": {
     "NAME": "炼金术",
-    "DESCRIPTION": "获得 !B! 格挡。 NL 第3小句：获得 !M! 金币。 NL 消耗。"
+    "DESCRIPTION": "获得 !B!  格挡 。 NL 第3 travelerstsmod:小句 ：获得 !M! 金币。 NL 消耗 。"
   },
   "TravelerSTSMod:SpellSearch": {
     "NAME": "搜寻咒语",
-    "DESCRIPTION": "固有。 NL 选择抽牌堆中1咒语牌加入手牌。 NL 消耗。",
-    "UPGRADE_DESCRIPTION": "固有。 NL 选择抽牌堆中1咒语牌加入手牌。"
+    "DESCRIPTION": " 固有 。 NL 选择抽牌堆中1咒语牌加入手牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 选择抽牌堆中1咒语牌加入手牌。"
   },
   "TravelerSTSMod:VoidBelief": {
     "NAME": "信奉虚空",
@@ -301,39 +283,45 @@
   },
   "TravelerSTSMod:PrideForm": {
     "NAME": "傲慢形态-人格",
-    "DESCRIPTION": "虚无。 NL 回合开始时，将1张随机人格牌加入手牌并获得虚无。 NL  travelerstsmod:行动 ：耗能降低1。",
-    "UPGRADE_DESCRIPTION": "固有。 NL 回合开始时，将1张随机升级过的人格牌加入手牌并获得虚无。 NL  travelerstsmod:行动 ：耗能降低1。"
+    "DESCRIPTION": "虚无 。 NL 回合开始时，将1张随机人格牌加入手牌并获得 虚无 。 NL  travelerstsmod:行动 ：耗能降低1。",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 回合开始时，将1张随机升级过的人格牌加入手牌并获得 虚无 。 NL  travelerstsmod:行动 ：耗能降低1。"
   },
   "TravelerSTSMod:GazeOfAbyss": {
     "NAME": "深渊凝视",
-    "DESCRIPTION": "回合结束时，每有1小句，下次回合开始时给予随机敌人该数目层的 travelerstsmod:低语 。",
-    "UPGRADE_DESCRIPTION": "回合结束时，每有1小句，下次回合开始时给予所有敌人该数目层的 travelerstsmod:低语 。"
+    "DESCRIPTION": "回合结束时，每有1 travelerstsmod:小句 ，下次回合开始时给予随机敌人该数目层的 travelerstsmod:低语 。",
+    "UPGRADE_DESCRIPTION": "回合结束时，每有1 travelerstsmod:小句 ，下次回合开始时给予所有敌人该数目层的 travelerstsmod:低语 。"
   },
   "TravelerSTSMod:Degenerate": {
     "NAME": "堕落",
     "DESCRIPTION": "人格牌的 travelerstsmod:行动 效果额外触发1次。",
-    "UPGRADE_DESCRIPTION": "固有。 NL 人格牌的 travelerstsmod:行动 效果额外触发1次。"
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 人格牌的 travelerstsmod:行动 效果额外触发1次。"
   },
   "TravelerSTSMod:QuickCasting": {
     "NAME": "快速施法",
-    "DESCRIPTION": "所有咒语牌耗能变为0并在打出后消耗。"
+    "DESCRIPTION": "所有咒语牌耗能变为0并在打出后 消耗 。"
   },
   "TravelerSTSMod:VoiceOfDark": {
     "NAME": "黑暗之声",
-    "DESCRIPTION": "回合结束时，所有敌人获得与身上 travelerstsmod:低语 层数相同的中毒。"
+    "DESCRIPTION": "每当你给予 travelerstsmod:低语 时，给予相同层数的 中毒 。"
   },
   "TravelerSTSMod:AnotherPath": {
     "NAME": "峰回路转",
-    "DESCRIPTION": "选择1手牌。若其在特定小句时打出具有额外效果，将当前小句重置为与其条件相同。",
-    "UPGRADE_DESCRIPTION": "选择1手牌。若其在特定小句时打出具有额外效果，将当前小句重置为与其条件相同，获得该数量的格挡。"
+    "DESCRIPTION": "选择1手牌。若其在特定 travelerstsmod:小句 时具有额外效果，将当前 travelerstsmod:小句 重置为与其条件相同。",
+    "UPGRADE_DESCRIPTION": "选择1手牌。若其在特定 travelerstsmod:小句 时具有额外效果，将当前 travelerstsmod:小句 重置为与其条件相同，本回合打出前耗能-1。"
   },
   "TravelerSTSMod:Inspire": {
     "NAME": "创作欲",
-    "DESCRIPTION": "获得 !B! 点格挡。拥有笔墨2点或更多时，抽2张牌。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。拥有 travelerstsmod:笔墨 2点或更多时，抽2张牌。"
   },
   "TravelerSTSMod:SpellKit": {
     "NAME": "咒语锦囊",
-    "DESCRIPTION": "在手牌中加入X张随机咒语，本回合打出前耗能变为0。 NL 消耗。",
+    "DESCRIPTION": "在手牌中加入X张随机咒语，本回合打出前耗能变为0。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "在手牌中加入X+1张随机咒语，本回合打出前耗能变为0。"
+  },
+  "TravelerSTSMod:SilentSpell": {
+    "NAME": "寂静咒语",
+    "DESCRIPTION": "移除所有敌人身上的 travelerstsmod:低语 ，获得等量 格挡 。",
+    "UPGRADE_DESCRIPTION": "移除所有敌人身上的 travelerstsmod:低语 ，获得等量 格挡 。给予被移除 travelerstsmod:低语 的敌人1层虚弱。",
+    "EXTENDED_DESCRIPTION": ["(获得 !B! 点 格挡 )"]
   }
 }

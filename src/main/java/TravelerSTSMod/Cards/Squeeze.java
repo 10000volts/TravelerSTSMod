@@ -27,6 +27,8 @@ public class Squeeze extends CustomCard {
 
     public Squeeze() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+
+        this.isSeen = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -35,7 +37,7 @@ public class Squeeze extends CustomCard {
             public void update() {
                 int count = 0;
                 for (AbstractCard c : AbstractDungeon.player.hand.group) {
-                    if (c.cost == -2 || c.cost == 0) {
+                    if (c.cost == -2 || c.costForTurn == 0) {
                         addToTop(new DiscardSpecificCardAction(c));
                         ++count;
                     }

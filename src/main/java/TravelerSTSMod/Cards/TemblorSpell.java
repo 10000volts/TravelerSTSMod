@@ -34,8 +34,10 @@ public class TemblorSpell extends SpellCard {
     public TemblorSpell(int influenced) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, influenced);
 
-        this.baseDamage = 10;
-        this.damage = 10;
+        this.isSeen = true;
+
+        this.baseDamage = 8;
+        this.damage = 8;
         this.baseMagicNumber = 5;
         this.magicNumber = 5;
     }

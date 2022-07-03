@@ -35,6 +35,8 @@ public class SpellKit extends SpellCard {
     public SpellKit(int influenced) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, influenced);
 
+        this.isSeen = true;
+
         this.exhaust = true;
         this.baseMagicNumber = 0;
         this.magicNumber = 0;

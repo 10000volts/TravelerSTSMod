@@ -1,0 +1,14 @@
+{
+  "TravelerSTSMod:Ink": {
+    "NAME": "墨水",
+    "DESCRIPTIONS": ["获得 #b", " 点 #y笔墨 ."]
+  },
+  "TravelerSTSMod:BottleSpell": {
+    "NAME": "瓶装咒语",
+    "DESCRIPTIONS": ["从 #b3 张随机 #y咒语 牌中选择 #b1 张加入你的手牌 #b", " 次，本回合打出前耗能变为 #b0 。"]
+  },
+  "TravelerSTSMod:Whisper": {
+    "NAME": "低语药水",
+    "DESCRIPTIONS": ["给予 #b", " 层 #y低语 。"]
+  }
+}

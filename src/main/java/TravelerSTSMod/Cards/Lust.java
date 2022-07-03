@@ -31,8 +31,10 @@ public class Lust extends PersonalityCard {
     public Lust(boolean ethereal) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ethereal);
 
-        this.baseMagicNumber = 1;
-        this.magicNumber = 1;
+        this.isSeen = true;
+
+        this.baseMagicNumber = 2;
+        this.magicNumber = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

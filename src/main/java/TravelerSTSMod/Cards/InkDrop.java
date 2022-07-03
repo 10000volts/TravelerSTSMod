@@ -30,6 +30,8 @@ public class InkDrop extends CustomCard {
     public InkDrop() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
+        this.isSeen = true;
+
         this.baseDamage = 6;
         this.damage = 6;
         this.baseMagicNumber = 2;

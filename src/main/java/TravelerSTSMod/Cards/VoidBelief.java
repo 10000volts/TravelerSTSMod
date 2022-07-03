@@ -33,6 +33,8 @@ public class VoidBelief extends CustomCard {
     public VoidBelief() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
+        this.isSeen = true;
+
         this.baseMagicNumber = 0;
         this.magicNumber = 0;
     }

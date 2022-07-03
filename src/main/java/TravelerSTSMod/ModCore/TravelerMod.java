@@ -2,10 +2,10 @@ package TravelerSTSMod.ModCore;
 import TravelerSTSMod.Cards.*;
 import TravelerSTSMod.Characters.Traveler;
 import TravelerSTSMod.Patches.SpellStormPatch;
-import TravelerSTSMod.Relics.AbyssInkBottle;
-import TravelerSTSMod.Relics.BlankMovement;
-import TravelerSTSMod.Relics.BookAndQuill;
-import TravelerSTSMod.Relics.MobiusBand;
+import TravelerSTSMod.Potions.BottleSpell;
+import TravelerSTSMod.Potions.Ink;
+import TravelerSTSMod.Potions.Whisper;
+import TravelerSTSMod.Relics.*;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -14,9 +14,11 @@ import basemod.BaseMod;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.helpers.Prefs;
 import com.megacrit.cardcrawl.localization.*;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -25,7 +27,7 @@ import java.util.ArrayList;
 
 @SpireInitializer
 public class TravelerMod implements EditCharactersSubscriber,EditCardsSubscriber,
-        EditRelicsSubscriber, EditStringsSubscriber, EditKeywordsSubscriber, PostBattleSubscriber {
+        EditRelicsSubscriber, EditStringsSubscriber, EditKeywordsSubscriber, PostBattleSubscriber{
     public static final Logger logger = LogManager.getLogger(TravelerMod.class);
 
     // 人物选择界面按钮的图片
@@ -73,6 +75,15 @@ public class TravelerMod implements EditCharactersSubscriber,EditCardsSubscriber
     public void receiveEditCharacters() {
         BaseMod.addCharacter(new Traveler(CardCrawlGame.playerName), MY_CHARACTER_BUTTON, MY_CHARACTER_PORTRAIT,
                 Traveler.Enums.TRAVELER);
+
+        ArrayList<Prefs> prefs = CardCrawlGame.characterManager.getAllPrefs();
+
+        receiveEditPotions();
+
+//        Prefs p = prefs.get(4);
+//        p.putInteger("ASCENSION_LEVEL", 20);
+//        p.putInteger("LAST_ASCENSION_LEVEL", 20);
+//        p.flush();
     }
 
     @Override
@@ -81,6 +92,26 @@ public class TravelerMod implements EditCharactersSubscriber,EditCardsSubscriber
         BaseMod.addRelicToCustomPool(new BlankMovement(), Traveler.Enums.TRAVELER_CARD);
         BaseMod.addRelicToCustomPool(new AbyssInkBottle(), Traveler.Enums.TRAVELER_CARD);
         BaseMod.addRelicToCustomPool(new MobiusBand(), Traveler.Enums.TRAVELER_CARD);
+        BaseMod.addRelicToCustomPool(new Trinity(), Traveler.Enums.TRAVELER_CARD);
+        BaseMod.addRelicToCustomPool(new SpellDictionary(), Traveler.Enums.TRAVELER_CARD);
+        BaseMod.addRelicToCustomPool(new BloodSeeker(), Traveler.Enums.TRAVELER_CARD);
+        BaseMod.addRelicToCustomPool(new Inferno(), Traveler.Enums.TRAVELER_CARD);
+        BaseMod.addRelicToCustomPool(new SoulVessel(), Traveler.Enums.TRAVELER_CARD);
+        BaseMod.addRelicToCustomPool(new Phonograph(), Traveler.Enums.TRAVELER_CARD);
+        BaseMod.addRelicToCustomPool(new InkHourglass(), Traveler.Enums.TRAVELER_CARD);
+        BaseMod.addRelicToCustomPool(new CrystalFromAbyss(), Traveler.Enums.TRAVELER_CARD);
+        UnlockTracker.markRelicAsSeen(BookAndQuill.ID);
+        UnlockTracker.markRelicAsSeen(BlankMovement.ID);
+        UnlockTracker.markRelicAsSeen(AbyssInkBottle.ID);
+        UnlockTracker.markRelicAsSeen(MobiusBand.ID);
+        UnlockTracker.markRelicAsSeen(Trinity.ID);
+        UnlockTracker.markRelicAsSeen(SpellDictionary.ID);
+        UnlockTracker.markRelicAsSeen(BloodSeeker.ID);
+        UnlockTracker.markRelicAsSeen(Inferno.ID);
+        UnlockTracker.markRelicAsSeen(SoulVessel.ID);
+        UnlockTracker.markRelicAsSeen(Phonograph.ID);
+        UnlockTracker.markRelicAsSeen(InkHourglass.ID);
+        UnlockTracker.markRelicAsSeen(CrystalFromAbyss.ID);
     }
 
     private void addPersonalities() {
@@ -111,13 +142,13 @@ public class TravelerMod implements EditCharactersSubscriber,EditCardsSubscriber
         spellPool.add(new TemblorSpell(0));
         spellPool.add(new SpellIntensify(0));
         spellPool.add(new AbsorbSpell(0));
+        spellPool.add(new SilentSpell(0));
     }
 
     @Override
     public void receiveEditCards() {
         addPersonalities();
         addSpells();
-
         BaseMod.addCard(new Strike());
         BaseMod.addCard(new InkDrop());
         BaseMod.addCard(new Defend());
@@ -183,12 +214,22 @@ public class TravelerMod implements EditCharactersSubscriber,EditCardsSubscriber
         BaseMod.addCard(new Illusion());
         BaseMod.addCard(new Squeeze());
         BaseMod.addCard(new AbsorbSpell(0));
-
         BaseMod.addCard(new BadOmen());
         BaseMod.addCard(new SpellKit(0));
         BaseMod.addCard(new PrideForm(false));
         BaseMod.addCard(new QuickCasting());
         BaseMod.addCard(new MindSplit());
+        BaseMod.addCard(new SilentSpell(0));
+        BaseMod.addCard(new AnotherPath());
+        BaseMod.addCard(new Notes());
+        BaseMod.addCard(new Caustic());
+        BaseMod.addCard(new MemoryLoss());
+    }
+
+    public void receiveEditPotions() {
+        BaseMod.addPotion(Ink.class, null, null, null, Ink.POTION_ID, Traveler.Enums.TRAVELER);
+        BaseMod.addPotion(BottleSpell.class, null, null, null, BottleSpell.POTION_ID, Traveler.Enums.TRAVELER);
+        BaseMod.addPotion(Whisper.class, Color.SCARLET.cpy(), Color.BLACK.cpy(), null, Whisper.POTION_ID, Traveler.Enums.TRAVELER);
     }
 
     @Override
@@ -207,6 +248,8 @@ public class TravelerMod implements EditCharactersSubscriber,EditCardsSubscriber
         BaseMod.loadCustomStrings(PowerStrings.class, powerStrings);
         String uiStrings = Gdx.files.internal(llPath + lang + "/uiString.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(UIStrings.class, uiStrings);
+        String potionStrings = Gdx.files.internal(llPath + lang + "/potion.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStrings(PotionStrings.class, potionStrings);
 
         BaseMod.addColor(Traveler.Enums.TRAVELER_CARD, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR,
                 BG_ATTACK_512,BG_SKILL_512,BG_POWER_512,ENEYGY_ORB,BG_ATTACK_1024,BG_SKILL_1024,BG_POWER_1024,BIG_ORB,

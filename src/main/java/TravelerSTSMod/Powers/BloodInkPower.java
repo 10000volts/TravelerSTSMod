@@ -46,7 +46,12 @@ public class BloodInkPower extends AbstractPower {
     }
 
     @Override
-    public void atEndOfTurn(boolean isPlayer) {
-        if (isPlayer) addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+    public void atStartOfTurn() {
+        super.atStartOfTurn();
+        if (this.amount == 1) {
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+        } else {
+            --this.amount;
+        }
     }
 }

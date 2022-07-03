@@ -28,6 +28,8 @@ public class FromAbyss extends CustomCard {
     public FromAbyss() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
+        this.isSeen = true;
+
         this.baseDamage = 16;
         this.isMultiDamage = true;
     }

@@ -3,14 +3,14 @@
     "NAME": "书与笔",
     "FLAVOR": "自动书写旅程见闻的奇异笔记。",
     "DESCRIPTIONS": [
-      "每次进入房间，获得 #b1 点 #y笔墨 。 NL 每次打出牌后，获得 #b1  #y小句 。回合开始时 #y小句 数重置为 #b1 。"
+      "每次进入房间，获得 #b1 点 #y笔墨 。"
     ]
   },
   "TravelerSTSMod:BlankMovement": {
     "NAME": "空白乐章",
     "FLAVOR": "五线谱上什么也没有。触摸它会演奏出令人不安的音乐。",
     "DESCRIPTIONS": [
-      "每次战斗开始时，给予生命值最高的敌人 #b10 层 #y低语 。"
+      "每次战斗开始时，给予所有敌人 #b10 层 #y低语 。"
     ]
   },
   "TravelerSTSMod:MobiusBand": {
@@ -24,7 +24,63 @@
     "NAME": "深渊墨瓶",
     "FLAVOR": "只要献上血液，就会得到取之不尽的墨水。",
     "DESCRIPTIONS": [
-      " #y笔墨 不足时用 #b2 生命值代替。"
+      " #y笔墨 不足时每点用 #b1 生命值代替。"
+    ]
+  },
+  "TravelerSTSMod:SpellDictionary": {
+    "NAME": "咒语词典",
+    "FLAVOR": "上面记载着几百年前曾存在过的远古法术。",
+    "DESCRIPTIONS": [
+      "战斗开始时，从 #b3 张随机 #y咒语 牌中选择 #b1 张加入手牌，本回合耗能变为0。"
+    ]
+  },
+  "TravelerSTSMod:BloodSeeker": {
+    "NAME": "渴求者",
+    "FLAVOR": "另一个维度的奇特生物，不知何时开始成群地出现在尖塔。",
+    "DESCRIPTIONS": [
+      "每在 #b3 场战斗中胜利，获得 #b1 笔墨。"
+    ]
+  },
+  "TravelerSTSMod:InkHourglass": {
+    "NAME": "滴墨沙漏",
+    "FLAVOR": "非常粘稠，滴落一滴需要十个小时。",
+    "DESCRIPTIONS": [
+      " #y小句 数达到5时，给予所有敌人 #b5 点伤害。"
+    ]
+  },
+  "TravelerSTSMod:Trinity": {
+    "NAME": "三位一体",
+    "FLAVOR": "另外两个你正对你说着什么。",
+    "DESCRIPTIONS": [
+      "每打出 #b3 张 #y人格 牌，给予所有敌人 #b3 层 #y低语 。"
+    ]
+  },
+  "TravelerSTSMod:SoulVessel": {
+    "NAME": "灵魂容器",
+    "FLAVOR": "可以存储1/2的记忆，1/3的人格，1/4的情感和一个名字。",
+    "DESCRIPTIONS": [
+      "打出 #y人格 牌时也能触发其他 #y人格 牌的行动效果。"
+    ]
+  },
+  "TravelerSTSMod:Phonograph": {
+    "NAME": "留声机",
+    "FLAVOR": "可惜你并没有能够播放的唱片。",
+    "DESCRIPTIONS": [
+      " #y低语 在回合开始时减半而不是清零。"
+    ]
+  },
+  "TravelerSTSMod:Inferno": {
+    "NAME": "幽冥火种",
+    "FLAVOR": "看上去像是火焰，实际上却寒冷彻骨。",
+    "DESCRIPTIONS": [
+      "战斗开始时，手牌1随机卡在本场战斗中耗能变为0。"
+    ]
+  },
+  "TravelerSTSMod:CrystalFromAbyss": {
+    "NAME": "深渊结晶",
+    "FLAVOR": "透过半透明的晶体可以看到许多张恐怖的鬼脸。",
+    "DESCRIPTIONS": [
+      "回合开始时，可以丢弃 #b1 张手牌，对所有敌人造成 #b6 点伤害。"
     ]
   }
 }

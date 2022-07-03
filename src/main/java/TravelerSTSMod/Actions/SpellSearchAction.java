@@ -60,6 +60,10 @@ public class SpellSearchAction extends AbstractGameAction {
                     temp.group.add(c);
                 }
             }
+            if (temp.isEmpty()) {
+                isDone = true;
+                return;
+            }
             temp.sortAlphabetically(true);
             temp.sortByRarityPlusStatusCardType(false);
             if (this.numberOfCards == 1) {

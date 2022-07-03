@@ -1,5 +1,6 @@
 package TravelerSTSMod.Cards;
 
+import TravelerSTSMod.Cards.Abstract.ISpecificSentence;
 import TravelerSTSMod.Cards.Abstract.SpellCard;
 import TravelerSTSMod.Characters.Traveler;
 import TravelerSTSMod.Powers.ChantPower;
@@ -14,7 +15,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Chant extends CustomCard {
+public class Chant extends CustomCard implements ISpecificSentence {
     public static final String ID = "TravelerSTSMod:Chant";
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = CARD_STRINGS.NAME;
@@ -29,14 +30,14 @@ public class Chant extends CustomCard {
 
     public Chant() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.exhaust = true;
+
+        this.isSeen = true;
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.exhaust = false;
             this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
@@ -59,5 +60,10 @@ public class Chant extends CustomCard {
         if (SentencePower.getSentence(AbstractDungeon.player) == (this.upgraded ? 6 : 2)) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
+    }
+
+    @Override
+    public int getSpecificSentence(boolean general) {
+        return (this.upgraded ? 6 : 2);
     }
 }

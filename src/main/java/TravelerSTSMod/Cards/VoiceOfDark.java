@@ -26,10 +26,12 @@ public class VoiceOfDark extends CustomCard {
 
     public VoiceOfDark()  {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+
+        this.isSeen = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new VoiceOfDarkPower(p)));
+        addToBot(new ApplyPowerAction(p, p, new VoiceOfDarkPower(p, 1), 1));
     }
 
     public void upgrade() {

@@ -30,6 +30,8 @@ public class Gluttony extends PersonalityCard {
     public Gluttony(boolean ethereal) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ethereal);
 
+        this.isSeen = true;
+
         this.baseMagicNumber = 2;
         this.magicNumber = 2;
     }
@@ -45,7 +47,8 @@ public class Gluttony extends PersonalityCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 
@@ -56,6 +59,16 @@ public class Gluttony extends PersonalityCard {
             c.upgrade();
             c.applyPowers();
             c.superFlash();
+        }
+
+        if (upgraded) {
+            for (AbstractCard hand : cards) {
+                if (hand.canUpgrade()) {
+                    hand.upgrade();
+                    hand.applyPowers();
+                    hand.superFlash();
+                }
+            }
         }
     }
 }

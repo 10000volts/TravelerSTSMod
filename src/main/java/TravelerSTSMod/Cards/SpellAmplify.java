@@ -24,6 +24,9 @@ public class SpellAmplify extends SpellCard {
 
     public SpellAmplify(int influenced) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, influenced);
+
+        this.isSeen = true;
+
         this.baseMagicNumber = 1;
         this.magicNumber = 1;
     }

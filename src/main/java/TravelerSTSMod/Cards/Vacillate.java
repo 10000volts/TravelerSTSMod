@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
@@ -30,13 +31,15 @@ public class Vacillate extends CustomCard {
 
     public Vacillate() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+
+        this.isSeen = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (m.hasPower("TravelerSTSMod:Whisper")) {
+        if (m.hasPower(WhisperPower.POWER_ID)) {
             addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -SentencePower.getSentence(p)),
                     -SentencePower.getSentence(p)));
-            if (!m.hasPower("Artifact"))
+            if (!m.hasPower(ArtifactPower.POWER_ID))
                 addToBot(new ApplyPowerAction(m, p,
                         new GainStrengthPower(m, SentencePower.getSentence(p)), SentencePower.getSentence(p),
                         true, AbstractGameAction.AttackEffect.NONE));

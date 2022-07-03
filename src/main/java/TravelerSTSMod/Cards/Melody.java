@@ -1,5 +1,6 @@
 package TravelerSTSMod.Cards;
 
+import TravelerSTSMod.Cards.Abstract.ISpecificSentence;
 import TravelerSTSMod.Characters.Traveler;
 import TravelerSTSMod.Powers.HeartLockPower;
 import TravelerSTSMod.Powers.MelodyPower;
@@ -11,7 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Melody extends CustomCard {
+public class Melody extends CustomCard implements ISpecificSentence {
     public static final String ID = "TravelerSTSMod:Melody";
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = CARD_STRINGS.NAME;
@@ -25,6 +26,9 @@ public class Melody extends CustomCard {
 
     public Melody()  {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+
+        this.isSeen = true;
+
         this.baseMagicNumber = 1;
         this.magicNumber = 1;
     }
@@ -44,5 +48,10 @@ public class Melody extends CustomCard {
 
     public AbstractCard makeCopy() {
         return new Melody();
+    }
+
+    @Override
+    public int getSpecificSentence(boolean general) {
+        return general ? 4 : -1;
     }
 }

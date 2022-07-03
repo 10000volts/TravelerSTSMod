@@ -29,6 +29,8 @@ public class ContractSpell extends SpellCard implements IUsePositionCard {
     public ContractSpell(int influenced) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, influenced);
 
+        this.isSeen = true;
+
         this.baseBlock = 5;
         this.block = 5;
     }

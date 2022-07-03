@@ -1,5 +1,6 @@
 package TravelerSTSMod.Cards;
 
+import TravelerSTSMod.Cards.Abstract.ISpecificSentence;
 import TravelerSTSMod.Characters.Traveler;
 import TravelerSTSMod.Powers.SentencePower;
 import TravelerSTSMod.Relics.BookAndQuill;
@@ -14,7 +15,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ThinkHard extends CustomCard {
+public class ThinkHard extends CustomCard implements ISpecificSentence {
     public static final String ID = "TravelerSTSMod:ThinkHard";
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = CARD_STRINGS.NAME;
@@ -30,6 +31,8 @@ public class ThinkHard extends CustomCard {
     public ThinkHard() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
+        this.isSeen = true;
+
         this.baseMagicNumber = 1;
         this.magicNumber = 1;
     }
@@ -37,7 +40,7 @@ public class ThinkHard extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DrawCardAction(p, 5));
 
-        if (SentencePower.getSentence(AbstractDungeon.player) == 4) {
+        if (SentencePower.getSentence(AbstractDungeon.player) == 2) {
             addToBot(new RetainCardsAction(p, this.magicNumber));
         }
     }
@@ -55,8 +58,13 @@ public class ThinkHard extends CustomCard {
 
     public void triggerOnGlowCheck() {
         this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        if (SentencePower.getSentence(AbstractDungeon.player) == 4) {
+        if (SentencePower.getSentence(AbstractDungeon.player) == 2) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
+    }
+
+    @Override
+    public int getSpecificSentence(boolean general) {
+        return 2;
     }
 }

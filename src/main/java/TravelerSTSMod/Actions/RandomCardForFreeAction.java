@@ -10,8 +10,10 @@ import java.util.ArrayList;
 public class RandomCardForFreeAction extends AbstractGameAction {
     private AbstractCard.CardTags tags;
     private ArrayList<AbstractCard> cl;
+    private boolean combat;
 
-    public RandomCardForFreeAction(AbstractCard.CardTags t) {
+    public RandomCardForFreeAction(AbstractCard.CardTags t, boolean combat) {
+        this.combat = combat;
         tags = t;
         this.duration = Settings.ACTION_DUR_FAST;
     }
@@ -37,9 +39,15 @@ public class RandomCardForFreeAction extends AbstractGameAction {
         AbstractCard c = cl.get(AbstractDungeon.cardRandomRng.random(cl.size() - 1));
         if (tags != null && !c.tags.contains(tags)) findAndModifyCard();
         if (c.costForTurn > 0) {
-            c.setCostForTurn(0);
-            c.isCostModified = true;
-            c.superFlash();
+            if (combat) {
+                c.updateCost(-9);
+                c.isCostModified = true;
+                c.superFlash();
+            } else {
+                c.setCostForTurn(0);
+                c.isCostModified = true;
+                c.superFlash();
+            }
         } else {
             findAndModifyCard();
         }

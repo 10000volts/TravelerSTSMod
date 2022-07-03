@@ -25,6 +25,8 @@ public class Degenerate extends CustomCard {
 
     public Degenerate()  {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+
+        this.isSeen = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

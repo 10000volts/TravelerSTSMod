@@ -32,6 +32,8 @@ public class Wrath extends PersonalityCard {
     public Wrath(boolean ethereal) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ethereal);
 
+        this.isSeen = true;
+
         this.baseMagicNumber = 2;
         this.magicNumber = 2;
 

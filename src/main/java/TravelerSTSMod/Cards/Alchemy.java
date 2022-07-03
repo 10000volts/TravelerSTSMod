@@ -1,5 +1,6 @@
 package TravelerSTSMod.Cards;
 
+import TravelerSTSMod.Cards.Abstract.ISpecificSentence;
 import TravelerSTSMod.Characters.Traveler;
 import TravelerSTSMod.Powers.SentencePower;
 import TravelerSTSMod.Relics.BookAndQuill;
@@ -13,7 +14,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Alchemy extends CustomCard {
+public class Alchemy extends CustomCard implements ISpecificSentence {
     public static final String ID = "TravelerSTSMod:Alchemy";
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = CARD_STRINGS.NAME;
@@ -27,6 +28,8 @@ public class Alchemy extends CustomCard {
 
     public Alchemy() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+
+        this.isSeen = true;
 
         this.baseBlock = 15;
         this.baseMagicNumber = 15;
@@ -58,5 +61,10 @@ public class Alchemy extends CustomCard {
         if (SentencePower.getSentence(AbstractDungeon.player) == 3) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
+    }
+
+    @Override
+    public int getSpecificSentence(boolean general) {
+        return 3;
     }
 }

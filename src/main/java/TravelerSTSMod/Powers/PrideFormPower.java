@@ -20,12 +20,12 @@ public class PrideFormPower extends AbstractPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public PrideFormPower(AbstractCreature owner, int amount) {
+    public PrideFormPower(AbstractCreature owner) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
         this.type = PowerType.BUFF;
-        this.amount = amount;
+        this.amount = -1;
 
         // 添加一大一小两张能力图
         String path128 = "TravelerSTSModResources/img/powers/128/PrideForm.png";
@@ -38,13 +38,13 @@ public class PrideFormPower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        this.description = DESCRIPTIONS[0];
     }
 
     @Override
     public void atStartOfTurn() {
         AbstractCard c = TravelerMod.personalityPool.get(
-                AbstractDungeon.cardRandomRng.random(TravelerMod.personalityPool.size() - 1));
+                AbstractDungeon.cardRandomRng.random(TravelerMod.personalityPool.size() - 1)).makeCopy();
         c.isEthereal = true;
         addToBot(new MakeTempCardInHandAction(c, true));
     }

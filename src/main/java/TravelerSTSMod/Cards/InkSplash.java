@@ -31,6 +31,8 @@ public class InkSplash extends CustomCard {
     public InkSplash() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
+        this.isSeen = true;
+
         this.baseDamage = 6;
         this.isMultiDamage = true;
         this.baseMagicNumber = 4;
@@ -42,6 +44,7 @@ public class InkSplash extends CustomCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(1);
+            this.upgradeDamage(3);
         }
     }
 

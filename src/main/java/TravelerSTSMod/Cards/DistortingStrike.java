@@ -2,6 +2,7 @@ package TravelerSTSMod.Cards;
 
 import TravelerSTSMod.Cards.Abstract.SpellCard;
 import TravelerSTSMod.Characters.Traveler;
+import TravelerSTSMod.Powers.WhisperPower;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -34,6 +35,8 @@ public class DistortingStrike extends CustomCard {
     public DistortingStrike() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
+        this.isSeen = true;
+
         this.baseDamage = 6;
         this.damage = 6;
         this.tags.add(CardTags.STRIKE);
@@ -57,7 +60,7 @@ public class DistortingStrike extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         for (AbstractPower pw : m.powers) {
-            if (pw.ID.equals("TravelerSTSMod:Whisper")) {
+            if (pw.ID.equals(WhisperPower.POWER_ID)) {
                 addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, pw.amount, false), pw.amount,
                         true, AbstractGameAction.AttackEffect.NONE));
                 if (this.upgraded) {
@@ -72,7 +75,7 @@ public class DistortingStrike extends CustomCard {
     public void triggerOnGlowCheck() {
         this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         for (AbstractMonster m : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-            if (!m.isDeadOrEscaped() && m.hasPower("TravelerSTSMod:Whisper")) {
+            if (!m.isDeadOrEscaped() && m.hasPower(WhisperPower.POWER_ID)) {
                 this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
                 break;
             }

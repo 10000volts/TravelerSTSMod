@@ -28,6 +28,8 @@ public class Organize extends CustomCard {
     public Organize() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
+        this.isSeen = true;
+
         this.baseBlock = 7;
     }
 

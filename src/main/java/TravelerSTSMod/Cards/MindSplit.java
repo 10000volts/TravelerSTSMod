@@ -2,6 +2,7 @@ package TravelerSTSMod.Cards;
 
 import TravelerSTSMod.Cards.Abstract.IOnTriggerAction;
 import TravelerSTSMod.Characters.Traveler;
+import TravelerSTSMod.Patches.ReturnToHandOncePatch;
 import TravelerSTSMod.Powers.WhisperPower;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -26,19 +27,27 @@ public class MindSplit extends CustomCard implements IOnTriggerAction {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final int COST = 0;
 
+    private boolean extraUpgrade;
+
     public MindSplit() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+
+        this.baseMagicNumber = 3;
+        this.magicNumber = 3;
+        extraUpgrade = false;
+
+        this.isSeen = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (this.upgraded) {
             for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-                addToBot(new ApplyPowerAction(mo, p, new WhisperPower(mo, p, 3), 3,
+                addToBot(new ApplyPowerAction(mo, p, new WhisperPower(mo, p, this.magicNumber), this.magicNumber,
                         true, AbstractGameAction.AttackEffect.NONE));
             }
         } else {
-            addToBot(new ApplyPowerAction(m, p, new WhisperPower(m, p, 3),
-                    3, true, AbstractGameAction.AttackEffect.NONE));
+            addToBot(new ApplyPowerAction(m, p, new WhisperPower(m, p, this.magicNumber),
+                    this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
         }
 
         // 复原
@@ -46,14 +55,28 @@ public class MindSplit extends CustomCard implements IOnTriggerAction {
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-                c.returnToHand = false;
+                AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
+                    @Override
+                    public void update() {
+                        c.returnToHand = false;
+                        isDone = true;
+                    }
+                });
                 isDone = true;
             }
         });
+
+        if (extraUpgrade) {
+            extraUpgrade = false;
+            this.upgradeMagicNumber(2);
+        }
     }
 
     public AbstractCard makeCopy() {
-        return new MindSplit();
+        AbstractCard c = new MindSplit();
+        c.baseMagicNumber = this.baseMagicNumber;
+        c.magicNumber = this.magicNumber;
+        return c;
     }
 
     public void upgrade() {
@@ -67,6 +90,8 @@ public class MindSplit extends CustomCard implements IOnTriggerAction {
 
     @Override
     public void onTriggerAction(int pos) {
+        extraUpgrade = true;
         this.returnToHand = true;
+        // ReturnToHandOncePatch.returnToHandOnceField.put(this, true);
     }
 }

@@ -33,6 +33,8 @@ public class SpellStorm extends SpellCard {
     public SpellStorm(int influenced) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, influenced);
 
+        this.isSeen = true;
+
         this.baseDamage = 3;
         this.damage = 3;
         this.baseMagicNumber = 3;
