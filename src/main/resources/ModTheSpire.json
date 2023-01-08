@@ -1,10 +1,11 @@
 {
-  "modid": "TravelerSTSMod",
-  "name": "TravelerSTSMod",
-  "author_list": ["vodkakaa"],
-  "description": "旅人mod...尝试成为一个最讲理的、最需要思考的mod。不来挑战一下a20吗？",
-  "version": "0.1.0",
+  "modid": "Traveler",
+  "name": "Traveler",
+  "author_list": ["vodkakaa", "YYQ"],
+  "description": "如果你对自己的计算力、卡组掌控力和游戏理解有信心，可以来尝试这个复杂的mod，帮助旅人完成这段艰难的最后旅程……\n\nmod特色：\n5种全新体系，去同质化的体验：笔墨、小句、低语、咒语和人格，这五种体系错综复杂地交织在一起而不是独立存在。卡组构建不会被固化，需要灵活的根据当前情况进行去流派化的build，每次游玩都能产生新的体验。\n全局资源规划：笔墨是可以跨战斗保存的资源，但同时也非常珍贵。你需要在路线规划上进行更多思考，最大化利用笔墨带来的强大能力。\n神秘的人格体系：也许，当以往我们谈及体系时，似乎体系是一个相对封闭的概念，体系内即形成了强劲的闭环，但旅人的人格们却不止于此……\n配音、符合原版风格的重绘卡图和精美动画：这些都没有。不过碎心cg还是花了大功夫的。\n目前75张卡牌、12件遗物和3种药水已经全部完成，后续将不会再有新内容。\nPS：不建议和其他mod同时运行，我没有做任何测试。\n欢迎加群反馈在旅程中遇到的任何问题或对本mod的建议！qq群号：487110648",
+  "version": "1.2.3",
   "sts_version": "03-07-2022",
   "mts_version": "3.24.0",
-  "dependencies": ["basemod"]
+  "dependencies": ["basemod", "stslib"],
+  "credits": "Contributors: gongshen, yinmo26"
 }

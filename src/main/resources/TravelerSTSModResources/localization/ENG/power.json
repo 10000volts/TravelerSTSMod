@@ -1,0 +1,149 @@
+{
+  "TravelerSTSMod:Sentence": {
+    "NAME": "Verse",
+    "DESCRIPTIONS": [
+      "#yVerse is increased by #b1 when you play a card and is reset to #b1 at the start of turn."
+    ]
+  },
+  "TravelerSTSMod:HeartLock": {
+    "NAME": "Heart Lock",
+    "DESCRIPTIONS": [
+      "Whenever #yVerse reaches 7 stacks, reset it to #b1 and gain #b",
+      " Block."
+    ]
+  },
+  "TravelerSTSMod:Melody": {
+    "NAME": "Melodies",
+    "DESCRIPTIONS": [
+      "Whenever #yVerse reaches 4 stacks, draw #b",
+      " card(s)."
+    ]
+  },
+  "TravelerSTSMod:Whisper": {
+    "NAME": "Whisper",
+    "DESCRIPTIONS": [
+      "After playing a card, deal damage to each one with #yWhispers equal to the #yWhispers it has and reduce its #yWhispers by #b1. #yWhisper removes at the start of the owner's turn."
+    ]
+  },
+  "TravelerSTSMod:WhisperNextTurn": {
+    "NAME": "Whisper(Next Turn)",
+    "DESCRIPTIONS": [
+      "At the start of the owner's next turn, apply #b",
+      " #yWhispers to it."
+    ]
+  },
+  "TravelerSTSMod:EchoSpell": {
+    "NAME": "Echo Spell",
+    "DESCRIPTIONS": [
+      "#yVerses are reduced by half instead of ALL at the start of enemies' turn."
+    ]
+  },
+  "TravelerSTSMod:SpellAmplify": {
+    "NAME": "Spell Amplification",
+    "DESCRIPTIONS": [
+      "After you play a Spell, gain #b",
+      " #yVerse."
+    ]
+  },
+  "TravelerSTSMod:GazeOfAbyss": {
+    "NAME": "Gaze From The Abyss",
+    "DESCRIPTIONS": [
+      "At the start of your turn, apply #yWhispers to a random enemy at the amount equal to #yVerses you have at the end of last turn. (unstackable)"
+    ]
+  },
+  "TravelerSTSMod:GazeOfAbyssUpgraded": {
+    "NAME": "Gaze From The Abyss(Upgraded)",
+    "DESCRIPTIONS": [
+      "At the start of your turn, apply #yWhispers to a ALL enemies at the amount equal to #yVerses you have at the end of last turn. (unstackable)"
+    ]
+  },
+  "TravelerSTSMod:Degenerate": {
+    "NAME": "Degeneration",
+    "DESCRIPTIONS": [
+      "#yPersonalities' #yActions will trigger #b",
+      " another time(s)."
+    ]
+  },
+  "TravelerSTSMod:VoiceOfDark": {
+    "NAME": "Voice Of Darkness",
+    "DESCRIPTIONS": [
+      "Whenever you apply #yWhispers to an enemy, apply #yPoison to the enemy at the same amount."
+    ]
+  },
+  "TravelerSTSMod:AbsorbSpell": {
+    "NAME": "Absortion Spell",
+    "DESCRIPTIONS": [
+      "Convert attack damage blocked this turn to your Block next turn. (unstackable)"
+    ]
+  },
+  "TravelerSTSMod:Palindrome": {
+    "NAME": "Palindrome",
+    "DESCRIPTIONS": [
+      "This turn, your next #b",
+      " Spell(s) is played twice."
+    ]
+  },
+  "TravelerSTSMod:BloodInk": {
+    "NAME": "Blood Ink",
+    "DESCRIPTIONS": [
+      "Whenever there's a need to consume #yInk, consume #yBlood #yInk instead. #yBlood #yInk is reudced by #b1 at the start of turn."
+    ]
+  },
+  "TravelerSTSMod:Chant": {
+    "NAME": "Chant",
+    "DESCRIPTIONS": [
+      "ALL your Spells cost #b",
+      " less next turn."
+    ]
+  },
+  "TravelerSTSMod:ChantComplete": {
+    "NAME": "Chant(Completed)",
+    "DESCRIPTIONS": [
+      "ALL your Spells cost #b",
+      " less this turn."
+    ]
+  },
+  "TravelerSTSMod:SpellIntensify": {
+    "NAME": "Spell Intensification",
+    "DESCRIPTIONS": [
+      "For each other Spell you've played this turn, draw #b",
+      " card(s)."
+    ]
+  },
+  "TravelerSTSMod:Inking": {
+    "NAME": "Inking",
+    "DESCRIPTIONS": [
+      "Add an additional card reward in the non-boss combat reward. (unstackable)"
+    ]
+  },
+  "TravelerSTSMod:QuickCasting": {
+    "NAME": "Swift Casting",
+    "DESCRIPTIONS": [
+      "Spells cost 0. NL Whenever you play a Spell, #yExhaust it and draw #b",
+      " card(s)."
+    ]
+  },
+  "TravelerSTSMod:PrideForm": {
+    "NAME": "Pride Form",
+    "DESCRIPTIONS": [
+      "Add #b",
+      "Ethereal. ",
+      " random #yPersonality to your hand at the start of your turn. The #yPersonality gains Ethereal. ",
+      "Ethereal. "
+    ]
+  },
+  "TravelerSTSMod:PrideFormUpgraded": {
+    "NAME": "Pride Form(Upgraded)",
+    "DESCRIPTIONS": [
+      "Add #b",
+      "Ethereal. ",
+      " random #yPersonality to your hand at the start of your turn. #yUpgrade the #yPersonality and it gains Ethereal."
+    ]
+  },
+  "TravelerSTSMod:BadOmen": {
+    "NAME": "Evil Omen",
+    "DESCRIPTIONS": [
+      "The enemy keeps ALL #yWhispers at the start of its next turn."
+    ]
+  }
+}

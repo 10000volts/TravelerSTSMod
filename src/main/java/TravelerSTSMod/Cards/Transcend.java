@@ -30,6 +30,8 @@ public class Transcend extends CustomCard {
     public Transcend() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
+        this.isSeen = true;
+
         this.exhaust = true;
     }
 

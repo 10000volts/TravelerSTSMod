@@ -29,6 +29,9 @@ public class Inking extends CustomCard implements CustomSavable<Boolean> {
 
     public Inking()  {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+
+        this.isSeen = true;
+
         this.isEthereal = true;
         this.tags.add(CardTags.HEALING);
     }
@@ -61,11 +64,15 @@ public class Inking extends CustomCard implements CustomSavable<Boolean> {
 
     @Override
     public Boolean onSave() {
+        System.out.println("ONSAAAAAAAAAAAAAAAAAAVE");
+        System.out.println(played);
         return played;
     }
 
     @Override
     public void onLoad(Boolean aBoolean) {
         played = aBoolean;
+        System.out.println("ONLOOOOOOOOOOOOOOAD");
+        System.out.println(played);
     }
 }

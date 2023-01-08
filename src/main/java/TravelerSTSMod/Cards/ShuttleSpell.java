@@ -1,5 +1,6 @@
 package TravelerSTSMod.Cards;
 
+import TravelerSTSMod.Cards.Abstract.ISpecificSentence;
 import TravelerSTSMod.Cards.Abstract.PersonalityCard;
 import TravelerSTSMod.Cards.Abstract.SpellCard;
 import TravelerSTSMod.Characters.Traveler;
@@ -16,7 +17,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
 
-public class ShuttleSpell extends SpellCard {
+public class ShuttleSpell extends SpellCard implements ISpecificSentence {
     public static final String ID = "TravelerSTSMod:ShuttleSpell";
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = CARD_STRINGS.NAME;
@@ -30,6 +31,8 @@ public class ShuttleSpell extends SpellCard {
 
     public ShuttleSpell(int influenced) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, influenced);
+
+        this.isSeen = true;
 
         this.baseMagicNumber = 3;
         this.magicNumber = 3;
@@ -69,5 +72,10 @@ public class ShuttleSpell extends SpellCard {
         if (SentencePower.getSentence(AbstractDungeon.player) == 1) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
+    }
+
+    @Override
+    public int getSpecificSentence(boolean general) {
+        return 1;
     }
 }

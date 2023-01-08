@@ -2,6 +2,7 @@ package TravelerSTSMod.Cards;
 
 import TravelerSTSMod.Cards.Abstract.PersonalityCard;
 import TravelerSTSMod.Characters.Traveler;
+import TravelerSTSMod.Powers.PrideFormPower;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -30,6 +31,8 @@ public class Gluttony extends PersonalityCard {
     public Gluttony(boolean ethereal) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ethereal);
 
+        this.isSeen = true;
+
         this.baseMagicNumber = 2;
         this.magicNumber = 2;
     }
@@ -45,7 +48,29 @@ public class Gluttony extends PersonalityCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+            descriptionUpdate();
+        }
+    }
+
+    public void applyPowers() {
+        super.applyPowers();
+        descriptionUpdate();
+    }
+
+    public void descriptionUpdate() {
+        if (upgraded) {
+            if (isEthereal) {
+                this.rawDescription = PrideFormPower.DESCRIPTIONS[1] + CARD_STRINGS.UPGRADE_DESCRIPTION;
+            } else {
+                this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            }
+            initializeDescription();
+            return;
+        }
+
+        if (isEthereal) {
+            this.rawDescription = PrideFormPower.DESCRIPTIONS[1] + DESCRIPTION;
+            initializeDescription();
         }
     }
 
@@ -56,6 +81,16 @@ public class Gluttony extends PersonalityCard {
             c.upgrade();
             c.applyPowers();
             c.superFlash();
+        }
+
+        if (upgraded) {
+            for (AbstractCard hand : cards) {
+                if (hand.canUpgrade()) {
+                    hand.upgrade();
+                    hand.applyPowers();
+                    hand.superFlash();
+                }
+            }
         }
     }
 }

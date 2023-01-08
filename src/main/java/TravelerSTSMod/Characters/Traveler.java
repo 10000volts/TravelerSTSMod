@@ -1,21 +1,21 @@
 package TravelerSTSMod.Characters;
 
-import TravelerSTSMod.Cards.Defend;
-import TravelerSTSMod.Cards.EmptySpell;
-import TravelerSTSMod.Cards.InkDrop;
-import TravelerSTSMod.Cards.Strike;
+import TravelerSTSMod.Cards.*;
 import TravelerSTSMod.ModCore.TravelerMod;
+import TravelerSTSMod.Powers.SentencePower;
 import TravelerSTSMod.Relics.BookAndQuill;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.city.Vampires;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -70,7 +70,7 @@ public class Traveler extends CustomPlayer {
                 CORPSE_IMAGE, // 人物死亡图像
                 this.getLoadout(),
                 0.0F, 0.0F,
-                200.0F, 220.0F, // 人物碰撞箱大小，越大的人物模型这个越大
+                240.0F, 320.0F, // 人物碰撞箱大小，越大的人物模型这个越大
                 new EnergyManager(3) // 初始每回合的能量
         );
 
@@ -139,7 +139,7 @@ public class Traveler extends CustomPlayer {
     // 翻牌事件出现的你的职业牌（一般设为打击）
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new Strike();
+        return new Tribute();
     }
 
     // 卡牌轨迹颜色
@@ -226,6 +226,15 @@ public class Traveler extends CustomPlayer {
                 AbstractGameAction.AttackEffect.FIRE, AbstractGameAction.AttackEffect.SLASH_DIAGONAL,
                 AbstractGameAction.AttackEffect.SLASH_HEAVY, AbstractGameAction.AttackEffect.FIRE,
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL};
+    }
+
+    @Override
+    public void applyStartOfCombatLogic() {
+        super.applyStartOfCombatLogic();
+        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player,
+                AbstractDungeon.player, new SentencePower(AbstractDungeon.player), 1));
+
+        Inking.played = false;
     }
 
     // 为原版人物枚举、卡牌颜色枚举扩展的枚举，需要写，接下来要用

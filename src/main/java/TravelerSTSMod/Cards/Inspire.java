@@ -30,6 +30,8 @@ public class Inspire extends CustomCard {
     public Inspire() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
+        this.isSeen = true;
+
         this.baseBlock = 7;
     }
 

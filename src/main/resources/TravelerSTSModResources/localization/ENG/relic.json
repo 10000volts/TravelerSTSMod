@@ -1,0 +1,86 @@
+{
+  "TravelerSTSMod:BookAndQuill": {
+    "NAME": "Book And Pen",
+    "FLAVOR": "Write down the stories on the journey automatically.",
+    "DESCRIPTIONS": [
+      "Whenever you enter a room, gain #b1 #ytravelerstsmod:Ink."
+    ]
+  },
+  "TravelerSTSMod:BlankMovement": {
+    "NAME": "Blank Movement",
+    "FLAVOR": "Touching it makes disturbing sounds while there's nothing on the staff.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, Apply #b8 #ytravelerstsmod:Whispers to ALL enemies."
+    ]
+  },
+  "TravelerSTSMod:MobiusBand": {
+    "NAME": "Mobius Band",
+    "FLAVOR": "This was cut off.",
+    "DESCRIPTIONS": [
+      "At the end of your turn, if #ytravelerstsmod:Verses you have are not less than #b4, gain [E] at the start of next turn."
+    ]
+  },
+  "TravelerSTSMod:AbyssInkBottle": {
+    "NAME": "Abyss Ink Bottle",
+    "FLAVOR": "You may offer your blood to get inexhaustible supply of Ink.",
+    "DESCRIPTIONS": [
+      "Whenever there's a need to consume #ytravelerstsmod:Ink and you don't have enough #yInk, consume #b1 HP for each #yInk missing."
+    ]
+  },
+  "TravelerSTSMod:SpellDictionary": {
+    "NAME": "Dictionary Of Spells",
+    "FLAVOR": "It has the records of ancient magics that existed hundreds of years ago.",
+    "DESCRIPTIONS": [
+      "Choose #b1 of #b3 random Spells and add it to your hand at the start of each combat. The Spell costs #y0 that turn."
+    ]
+  },
+  "TravelerSTSMod:BloodSeeker": {
+    "NAME": "Blood Seeker",
+    "FLAVOR": "Creatures come from another dimension. It's hard to say since when they have appeared in clusters in the spire.",
+    "DESCRIPTIONS": [
+      "Gain #b1 #ytravelerstsmod:Ink for every #b3 combats."
+    ]
+  },
+  "TravelerSTSMod:InkHourglass": {
+    "NAME": "Hourglass Of Ink",
+    "FLAVOR": "So thick that it takes ten hours for a drop to fall.",
+    "DESCRIPTIONS": [
+      "Whenever travelerstsmod:Verse reaches 5 stacks, deal 5 damage to ALL enemies."
+    ]
+  },
+  "TravelerSTSMod:Trinity": {
+    "NAME": "Trinity",
+    "FLAVOR": "The other two are telling you something.",
+    "DESCRIPTIONS": [
+      "Apply #b3 #ytravelerstsmod:Whispers to ALL enemies for every #b3 #yPersonalities you play."
+    ]
+  },
+  "TravelerSTSMod:SoulVessel": {
+    "NAME": "Soul Container",
+    "FLAVOR": "Stores half of memories, a third of personality, a quarter of emotions and a name.",
+    "DESCRIPTIONS": [
+      "Playing #yPersonality triggers other #yPersonalities' #travelerstsmod:Action as well."
+    ]
+  },
+  "TravelerSTSMod:Phonograph": {
+    "NAME": "The Phonograph",
+    "FLAVOR": "It's a pity that you don't have any record to play.",
+    "DESCRIPTIONS": [
+      "#ytravelerstsmod:Whispers is reduced by half instead of ALL at the start of the owner's turn."
+    ]
+  },
+  "TravelerSTSMod:Inferno": {
+    "NAME": "Inferno Flame",
+    "FLAVOR": "Looks like fire but it's such cold.",
+    "DESCRIPTIONS": [
+      "Set the cost of a random card to #b0 at the start of each combat."
+    ]
+  },
+  "TravelerSTSMod:CrystalFromAbyss": {
+    "NAME": "Abyssal Crystal",
+    "FLAVOR": "One may face many horrible faces through the translucent crystal.",
+    "DESCRIPTIONS": [
+      "At the start of your turn, you can discard #b1 card in hand and deal #b6 damage to ALL enemies."
+    ]
+  }
+}

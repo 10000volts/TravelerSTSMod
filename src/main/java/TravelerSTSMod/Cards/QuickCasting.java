@@ -23,14 +23,16 @@ public class QuickCasting extends CustomCard {
     private static final CardColor COLOR = Traveler.Enums.TRAVELER_CARD;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final int COST = 2;
+    private static final int COST = 3;
 
     public QuickCasting()  {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+
+        this.isSeen = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new QuickCastingPower(p)));
+        addToBot(new ApplyPowerAction(p, p, new QuickCastingPower(p), 1));
 
         addToBot(new AbstractGameAction() {
             @Override
@@ -59,7 +61,7 @@ public class QuickCasting extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeBaseCost(1);
+            upgradeBaseCost(2);
         }
     }
 

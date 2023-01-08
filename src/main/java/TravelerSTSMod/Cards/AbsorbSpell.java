@@ -1,5 +1,6 @@
 package TravelerSTSMod.Cards;
 
+import TravelerSTSMod.Cards.Abstract.ISpecificSentence;
 import TravelerSTSMod.Cards.Abstract.SpellCard;
 import TravelerSTSMod.Characters.Traveler;
 import TravelerSTSMod.Powers.AbsorbSpellPower;
@@ -15,7 +16,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class AbsorbSpell extends SpellCard {
+public class AbsorbSpell extends SpellCard implements ISpecificSentence {
     public static final String ID = "TravelerSTSMod:AbsorbSpell";
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = CARD_STRINGS.NAME;
@@ -31,6 +32,8 @@ public class AbsorbSpell extends SpellCard {
     public AbsorbSpell(int influenced) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, influenced);
 
+        this.isSeen = true;
+
         this.baseBlock = 12;
         this.block = 12;
     }
@@ -39,7 +42,7 @@ public class AbsorbSpell extends SpellCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBlock(4);
+            this.upgradeBlock(6);
         }
     }
 
@@ -60,8 +63,13 @@ public class AbsorbSpell extends SpellCard {
     public void triggerOnGlowCheck() {
         this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         if (SentencePower.getSentence(AbstractDungeon.player) == 4 &&
-                !AbstractDungeon.player.hasPower("TravelerSTSMod:AbsorbSpell")) {
+                !AbstractDungeon.player.hasPower(AbsorbSpellPower.POWER_ID)) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
+    }
+
+    @Override
+    public int getSpecificSentence(boolean general) {
+        return 4;
     }
 }

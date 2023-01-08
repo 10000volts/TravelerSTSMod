@@ -27,17 +27,19 @@ public class GazeOfAbyss extends CustomCard {
 
     public GazeOfAbyss()  {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+
+        this.isSeen = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (upgraded) {
-            if (p.hasPower("TravelerSTSMod:GazeOfAbyssUpgraded")) return;
-            if (p.hasPower("TravelerSTSMod:GazeOfAbyss")) {
-                addToBot(new RemoveSpecificPowerAction(p, p, "TravelerSTSMod:GazeOfAbyss"));
+            if (p.hasPower(GazeOfAbyssPowerUpgraded.POWER_ID)) return;
+            if (p.hasPower(GazeOfAbyssPower.POWER_ID)) {
+                addToBot(new RemoveSpecificPowerAction(p, p, GazeOfAbyssPower.POWER_ID));
             }
             addToBot(new ApplyPowerAction(p, p, new GazeOfAbyssPowerUpgraded(p)));
-        } else if (!p.hasPower("TravelerSTSMod:GazeOfAbyssUpgraded")) {
-            if (p.hasPower("TravelerSTSMod:GazeOfAbyss")) return;
+        } else if (!p.hasPower(GazeOfAbyssPowerUpgraded.POWER_ID)) {
+            if (p.hasPower(GazeOfAbyssPower.POWER_ID)) return;
             addToBot(new ApplyPowerAction(p, p, new GazeOfAbyssPower(p)));
         }
     }

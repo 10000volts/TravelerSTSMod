@@ -1,5 +1,6 @@
 package TravelerSTSMod.Cards;
 
+import TravelerSTSMod.Cards.Abstract.ISpecificSentence;
 import TravelerSTSMod.Characters.Traveler;
 import TravelerSTSMod.Powers.HeartLockPower;
 import basemod.abstracts.CustomCard;
@@ -10,7 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class HeartLock extends CustomCard {
+public class HeartLock extends CustomCard implements ISpecificSentence {
     public static final String ID = "TravelerSTSMod:HeartLock";
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = CARD_STRINGS.NAME;
@@ -24,6 +25,9 @@ public class HeartLock extends CustomCard {
 
     public HeartLock()  {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+
+        this.isSeen = true;
+
         this.baseMagicNumber = 6;
         this.magicNumber = 6;
     }
@@ -41,5 +45,10 @@ public class HeartLock extends CustomCard {
 
     public AbstractCard makeCopy() {
         return new HeartLock();
+    }
+
+    @Override
+    public int getSpecificSentence(boolean general) {
+        return general ? 7 : -1;
     }
 }

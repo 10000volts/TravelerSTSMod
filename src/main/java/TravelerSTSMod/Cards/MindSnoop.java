@@ -2,6 +2,7 @@ package TravelerSTSMod.Cards;
 
 import TravelerSTSMod.Characters.Traveler;
 import TravelerSTSMod.Powers.SentencePower;
+import TravelerSTSMod.Powers.WhisperPower;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -31,6 +32,8 @@ public class MindSnoop extends CustomCard {
     public MindSnoop() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
+        this.isSeen = true;
+
         this.baseDamage = 8;
         this.damage = 8;
     }
@@ -54,7 +57,7 @@ public class MindSnoop extends CustomCard {
                 new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         addToBot(new DrawCardAction(p, 1));
-        if (m.hasPower("TravelerSTSMod:Whisper")) {
+        if (m.hasPower(WhisperPower.POWER_ID)) {
             addToBot(new GainEnergyAction(1));
         }
     }
@@ -62,7 +65,7 @@ public class MindSnoop extends CustomCard {
     public void triggerOnGlowCheck() {
         this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         for (AbstractMonster m : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-            if (!m.isDeadOrEscaped() && m.hasPower("TravelerSTSMod:Whisper")) {
+            if (!m.isDeadOrEscaped() && m.hasPower(WhisperPower.POWER_ID)) {
                 this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
                 break;
             }

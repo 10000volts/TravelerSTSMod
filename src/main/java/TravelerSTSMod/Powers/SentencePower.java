@@ -1,5 +1,6 @@
 package TravelerSTSMod.Powers;
 
+import basemod.devcommands.relic.Relic;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -9,6 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import org.apache.commons.lang3.ObjectUtils;
 import org.lwjgl.Sys;
 
@@ -85,6 +87,12 @@ public class SentencePower extends AbstractPower {
         if (n < 0) return;
 
         ArrayList<IOnSentenceChanged> l = new ArrayList<>();
+        for (AbstractRelic r : p.relics) {
+            if (r instanceof IOnSentenceChanged) {
+                // 可能会改变powers，故先缓存
+                l.add((IOnSentenceChanged) r);
+            }
+        }
         for (AbstractPower pw: p.powers) {
             if (pw instanceof IOnSentenceChanged) {
                 // 可能会改变powers，故先缓存

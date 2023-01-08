@@ -30,6 +30,8 @@ public class InkDrop extends CustomCard {
     public InkDrop() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
+        this.isSeen = true;
+
         this.baseDamage = 6;
         this.damage = 6;
         this.baseMagicNumber = 2;
@@ -65,9 +67,10 @@ public class InkDrop extends CustomCard {
     }
 
     public void triggerOnGlowCheck() {
-        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         if (BookAndQuill.enoughInk(1)) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        } else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         }
     }
 }

@@ -31,6 +31,8 @@ public class LiteraryTalent extends CustomCard {
     public LiteraryTalent() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
+        this.isSeen = true;
+
         this.exhaust = true;
     }
 

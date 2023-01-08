@@ -4,6 +4,7 @@ import TravelerSTSMod.Characters.Traveler;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -28,7 +29,7 @@ public class QuickCastingPower extends AbstractPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.type = PowerType.BUFF;
-        this.amount = -1;
+        this.amount = 1;
 
         // 添加一大一小两张能力图
         String path128 = "TravelerSTSModResources/img/powers/128/QuickCasting.png";
@@ -41,7 +42,8 @@ public class QuickCastingPower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0];
+        this.description = DESCRIPTIONS[0] + this.amount +
+                DESCRIPTIONS[1];
     }
 
     @Override
@@ -49,6 +51,7 @@ public class QuickCastingPower extends AbstractPower {
         super.onUseCard(card, action);
         if (card.tags.contains(Traveler.Enums.TRAVELER_SPELL)) {
             card.exhaust = true;
+            addToBot(new DrawCardAction(AbstractDungeon.player, this.amount));
         }
     }
 }

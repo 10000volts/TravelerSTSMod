@@ -1,6 +1,8 @@
 package TravelerSTSMod.Cards.Abstract;
 
 import TravelerSTSMod.Characters.Traveler;
+import TravelerSTSMod.Powers.PrideFormPower;
+import TravelerSTSMod.Powers.WhisperPower;
 import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -33,40 +35,67 @@ public abstract class PersonalityCard extends CustomCard {
         // 触发区间
         ArrayList<AbstractCard> cs = new ArrayList<>();
 
+        // 找到最右侧的人格
         boolean flag = false;
-        int ii = i-1;
-        // 找到在c左侧的，离c最近的人格卡
-        for (; ii >= 0; --ii) {
-            AbstractCard c_temp = g.get(ii);
-            if(c_temp instanceof PersonalityCard) {
-                // 这张人格卡不是离c最近的人格卡
-                if (onLeft && !c_temp.equals(this)) {
-                    return;
+        if (onLeft) {
+            for (int ii = g.size() - 1; ii > i; --ii) {
+                AbstractCard c_temp = g.get(ii);
+                if (c_temp instanceof PersonalityCard) {
+                    for (int j = i_this + 1; j < ii; ++j) {
+                        cs.add(g.get(j));
+                    }
+                    flag = true;
+                    break;
                 }
-                flag = true;
-                break;
-            } else {
-                cs.add(c_temp);
+            }
+        } else {
+            for (int ii = 0; ii < i; ++ii) {
+                AbstractCard c_temp = g.get(ii);
+                if (c_temp instanceof PersonalityCard) {
+                    for (int j = ii + 1; j < i_this; ++j) {
+                        cs.add(g.get(j));
+                    }
+                    flag = true;
+                    break;
+                }
             }
         }
-        // c左侧不存在人格卡，不可能满足人格触发条件
-        if (!flag) return;
-        flag = false;
 
-        // 找到在c右侧的，离c最近的人格卡
-        ii = i+1;
-        for (; ii < g.size(); ++ii) {
-            AbstractCard c_temp = g.get(ii);
-            if(c_temp instanceof PersonalityCard) {
-                if (!onLeft && !c_temp.equals(this)) {
-                    return;
-                }
-                flag = true;
-                break;
-            } else {
-                cs.add(c_temp);
-            }
-        }
+        // 旧版本人格：只有距离最近的两张人格会被触发。
+//        boolean flag = false;
+//        int ii = i-1;
+//        // 找到在c左侧的，离c最近的人格卡
+//        for (; ii >= 0; --ii) {
+//            AbstractCard c_temp = g.get(ii);
+//            if(c_temp instanceof PersonalityCard) {
+//                // 这张人格卡不是离c最近的人格卡
+//                if (onLeft && !c_temp.equals(this)) {
+//                    return;
+//                }
+//                flag = true;
+//                break;
+//            } else {
+//                cs.add(c_temp);
+//            }
+//        }
+//        // c左侧不存在人格卡，不可能满足人格触发条件
+//        if (!flag) return;
+//        flag = false;
+//
+//        // 找到在c右侧的，离c最近的人格卡
+//        ii = i+1;
+//        for (; ii < g.size(); ++ii) {
+//            AbstractCard c_temp = g.get(ii);
+//            if(c_temp instanceof PersonalityCard) {
+//                if (!onLeft && !c_temp.equals(this)) {
+//                    return;
+//                }
+//                flag = true;
+//                break;
+//            } else {
+//                cs.add(c_temp);
+//            }
+//        }
         if (!flag) return;
 
         for (AbstractPower pw : AbstractDungeon.player.powers) {

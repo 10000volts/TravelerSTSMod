@@ -7,7 +7,9 @@ import TravelerSTSMod.Powers.SentencePower;
 import basemod.abstracts.CustomSavable;
 import basemod.interfaces.PostBattleSubscriber;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -16,6 +18,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 
 public class SpellStorm extends SpellCard {
     public static final String ID = "TravelerSTSMod:SpellStorm";
@@ -32,6 +35,8 @@ public class SpellStorm extends SpellCard {
 
     public SpellStorm(int influenced) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, influenced);
+
+        this.isSeen = true;
 
         this.baseDamage = 3;
         this.damage = 3;
@@ -54,9 +59,13 @@ public class SpellStorm extends SpellCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m,
-                new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL),
-                AbstractGameAction.AttackEffect.LIGHTNING));
+        if (m != null) {
+            addToBot(new SFXAction("ORB_LIGHTNING_EVOKE", 0.1F));
+            addToBot(new VFXAction(new LightningEffect(m.hb.cX, m.hb.cY)));
+            addToBot(new DamageAction(m,
+                    new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL),
+                    AbstractGameAction.AttackEffect.NONE));
+        }
     }
 
     public void calculateCardDamage(AbstractMonster mo) {

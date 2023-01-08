@@ -1,6 +1,7 @@
 package TravelerSTSMod.Patches;
 
 import TravelerSTSMod.Cards.Abstract.PersonalityCard;
+import TravelerSTSMod.Relics.SoulVessel;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -15,10 +16,10 @@ public class PersonalityPatch {
     @SpirePrefixPatch
     public static void Prefix(AbstractPlayer self, AbstractCard c, AbstractMonster m, int e) {
         if (!self.hand.contains(c)) return;
-        if (!(c instanceof PersonalityCard)) {
+        if (!(c instanceof PersonalityCard) || self.hasRelic(SoulVessel.ID)) {
             ArrayList<PersonalityCard> pcs = new ArrayList<>();
             for (AbstractCard pc : self.hand.group) {
-                if (pc instanceof PersonalityCard) {
+                if (pc instanceof PersonalityCard && !pc.equals(c)) {
                     // 触发过程中hand.group可能会变，先存一下
                     pcs.add((PersonalityCard) pc);
                 }

@@ -2,6 +2,7 @@ package TravelerSTSMod.Cards;
 
 import TravelerSTSMod.Cards.Abstract.PersonalityCard;
 import TravelerSTSMod.Characters.Traveler;
+import TravelerSTSMod.Powers.PrideFormPower;
 import TravelerSTSMod.Powers.SentencePower;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -25,14 +26,16 @@ public class Envy extends PersonalityCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final int COST = 1;
 
-    private boolean waitForAct;
+    private int actTimes;
 
     public Envy(boolean ethereal) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ethereal);
 
+        this.isSeen = true;
+
         this.baseMagicNumber = 2;
         this.magicNumber = 2;
-        waitForAct = false;
+        actTimes = 0;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -50,16 +53,24 @@ public class Envy extends PersonalityCard {
         }
     }
 
+    public void applyPowers() {
+        super.applyPowers();
+        if (isEthereal) {
+            this.rawDescription = PrideFormPower.DESCRIPTIONS[1] + DESCRIPTION;
+            initializeDescription();
+        }
+    }
+
     @Override
     public void onAct(AbstractCard c, ArrayList<AbstractCard> cards, AbstractMonster m) {
         super.onAct(c, cards, m);
-        this.waitForAct = true;
+        this.actTimes += 1;
     }
 
     public void triggerOnOtherCardPlayed(AbstractCard c) {
-        if (this.waitForAct) {
-            this.waitForAct = false;
-            SentencePower.increaseSentence(AbstractDungeon.player, 1);
+        if (this.actTimes > 0) {
+            SentencePower.increaseSentence(AbstractDungeon.player, this.actTimes);
+            this.actTimes = 0;
         }
     }
 }

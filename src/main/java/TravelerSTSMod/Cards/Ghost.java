@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -29,12 +30,13 @@ public class Ghost extends CustomCard implements IReboundCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final int COST = 0;
 
-
     public Ghost() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseDamage = 2;
-        this.damage = 2;
+        this.isSeen = true;
+
+        this.baseDamage = 1;
+        this.damage = 1;
         this.baseMagicNumber = 2;
         this.magicNumber = 2;
     }
@@ -50,6 +52,14 @@ public class Ghost extends CustomCard implements IReboundCard {
     @Override
     public AbstractCard makeCopy() {
         return new Ghost();
+    }
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (!super.canUse(p, m)) return false;
+        return AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty() ||
+                AbstractDungeon.actionManager.cardsPlayedThisTurn.
+                        get(AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - 1).uuid != this.uuid;
     }
 
     @Override

@@ -3,5 +3,15 @@
     "TEXT" : [
       "耗能变化"
     ]
+  },
+  "TravelerSTSMod:AnotherPathAction" : {
+    "TEXT" : [
+      "峰回路转"
+    ]
+  },
+  "TravelerSTSMod:EmptySpellAction" : {
+    "TEXT" : [
+      "消耗(空灵人格-咒语)"
+    ]
   }
 }

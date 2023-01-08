@@ -1,0 +1,17 @@
+{
+  "TravelerSTSMod:WisdomAction": {
+    "TEXT": [
+      "Cost Manipulation"
+    ]
+  },
+  "TravelerSTSMod:AnotherPathAction": {
+    "TEXT": [
+      "Another Path"
+    ]
+  },
+  "TravelerSTSMod:EmptySpellAction" : {
+    "TEXT" : [
+      "Exhaust (Emptiness Spell)"
+    ]
+  }
+}

@@ -21,7 +21,7 @@ public class BadOmenPower extends AbstractPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.type = PowerType.DEBUFF;
-        this.amount = -1;
+        this.amount = 1;
         this.priority = 20;
 
         // 添加一大一小两张能力图
@@ -40,6 +40,10 @@ public class BadOmenPower extends AbstractPower {
 
     @Override
     public void atStartOfTurn() {
-        addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+        if (this.amount == 1) {
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+        } else {
+            --this.amount;
+        }
     }
 }

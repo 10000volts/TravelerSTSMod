@@ -49,8 +49,8 @@ public class WhisperNextTurnPower extends AbstractPower {
 
     @Override
     public void atStartOfTurn() {
-        addToBot(new ApplyPowerAction(this.owner, this.owner,
-                new WhisperPower(this.owner, this.owner, this.amount), this.amount,
+        addToBot(new ApplyPowerAction(this.owner, this.source,
+                new WhisperPower(this.owner, this.source, this.amount), this.amount,
                 true, AbstractGameAction.AttackEffect.NONE));
         addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
     }

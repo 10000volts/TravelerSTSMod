@@ -1,0 +1,23 @@
+{
+  "TravelerSTSMod:Ink": {
+    "NAME": "Ink",
+    "DESCRIPTIONS": [
+      "Gain #b",
+      " #yInk."
+    ]
+  },
+  "TravelerSTSMod:BottleSpell": {
+    "NAME": "Bottled Spell",
+    "DESCRIPTIONS": [
+      "Choose #b1 of #b3 random #ySpells and add it to your hand #b",
+      " times. The Spell costs 0 this turn."
+    ]
+  },
+  "TravelerSTSMod:Whisper": {
+    "NAME": "Whispering Potion",
+    "DESCRIPTIONS": [
+      "Apply #b",
+      " #yWhispers."
+    ]
+  }
+}

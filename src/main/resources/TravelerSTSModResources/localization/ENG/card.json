@@ -1,0 +1,333 @@
+{
+  "TravelerSTSMod:Strike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "TravelerSTSMod:Defend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "TravelerSTSMod:InkDrop": {
+    "NAME": "Drop Of Ink",
+    "DESCRIPTION": "Deal !D! damage. NL Consume 1 travelerstsmod:Ink: Deal !D! damage again and apply !M! travelerstsmod:Whispers."
+  },
+  "TravelerSTSMod:EmptySpell": {
+    "NAME": "Emptiness Spell",
+    "DESCRIPTION": "*Personality. NL At 4 travelerstsmod:Verses: Draw !M! cards. NL Once per turn, travelerstsmod:Action: Exhaust a card in the between."
+  },
+  "TravelerSTSMod:PainSpell": {
+    "NAME": "Pain Spell",
+    "DESCRIPTION": "For each travelerstsmod:Verse you have, deal !D! damage."
+  },
+  "TravelerSTSMod:SuddenStrike": {
+    "NAME": "Lethal Strike",
+    "DESCRIPTION": "Deal !D! damage. NL At 1 travelerstsmod:Verse: Multiply this damage by !M! times."
+  },
+  "TravelerSTSMod:TemblorSpell": {
+    "NAME": "Shock Spell",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! travelerstsmod:Whispers at the start of your next turn."
+  },
+  "TravelerSTSMod:AmuletSpell": {
+    "NAME": "Protection Spell",
+    "DESCRIPTION": "Deal !D! damage. NL When your travelerstsmod:Verse reaches 5 stacks, return this to hand from discard pile and reduce the cost by 1 this turn."
+  },
+  "TravelerSTSMod:MindSnoop": {
+    "NAME": "Snoop Mind",
+    "DESCRIPTION": "Deal !D! damage. NL Draw a card. NL If the target has travelerstsmod:Whispers, gain [E]."
+  },
+  "TravelerSTSMod:RigmaroleSpell": {
+    "NAME": "Prolix Spell",
+    "DESCRIPTION": "Deal !D! damage. NL Reduce this card's cost by 1 and shuffle it into draw pile."
+  },
+  "TravelerSTSMod:Ghost": {
+    "NAME": "The Ghost",
+    "DESCRIPTION": "Can only be played if your last card played is not this. NL Deal !D! damage. NL Apply !M! travelerstsmod:Whispers. NL Put this back on the top of draw pile."
+  },
+  "TravelerSTSMod:QuickSpell": {
+    "NAME": "Rush Spell",
+    "DESCRIPTION": "Deal !D! damage. NL Set the cost of a random Spell in hand to 0 until you play it this turn."
+  },
+  "TravelerSTSMod:InkSplash": {
+    "NAME": "Splash Ink",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Consume 1 travelerstsmod:Ink: Apply !M! travelerstsmod:Whispers to ALL enemies."
+  },
+  "TravelerSTSMod:SpellStorm": {
+    "NAME": "Chain Spell",
+    "DESCRIPTION": "Deal !D! damage. NL This deals !M! additional damage for each Spell you've played in this combat."
+  },
+  "TravelerSTSMod:BirthSpell": {
+    "NAME": "Rebirth Spell",
+    "DESCRIPTION": "Ethereal. NL Gain !M! travelerstsmod:Ink. NL Restore 3 HP. NL Remove this from deck when played.",
+    "UPGRADE_DESCRIPTION": "Ethereal. NL Gain !M! travelerstsmod:Ink. NL Restore 6 HP. NL Remove this from deck when played."
+  },
+  "TravelerSTSMod:Hypnotize": {
+    "NAME": "Hypnotize",
+    "DESCRIPTION": "Apply travelerstsmod:Whispers at the amount of travelerstsmod:Verses you have. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Apply 1 Weak. NL Apply travelerstsmod:Whispers at the amount of travelerstsmod:Verses you have. NL Exhaust."
+  },
+  "TravelerSTSMod:ShuttleSpell": {
+    "NAME": "Shuttling Spell",
+    "DESCRIPTION": "Draw 3 cards. NL If you have over 1 travelerstsmod:Verse, Exhaust this."
+  },
+  "TravelerSTSMod:TurnPages": {
+    "NAME": "Turn The Pages",
+    "DESCRIPTION": "Gain Block equal to travelerstsmod:Verses you have. NL Reset travelerstsmod:Verses to 1.",
+    "UPGRADE_DESCRIPTION": "Gain Block equal to travelerstsmod:Verses you have +3. NL Reset travelerstsmod:Verses to 1.",
+    "EXTENDED_DESCRIPTION": [
+      "(Gain !B! Block.)"
+    ]
+  },
+  "TravelerSTSMod:Wisdom": {
+    "NAME": "Wisdom",
+    "DESCRIPTION": "Set the cost of a random card in hand to 0 until you play it this turn.",
+    "UPGRADE_DESCRIPTION": "Set the cost of a card in hand to 0 until you play it this turn."
+  },
+  "TravelerSTSMod:Vacillate": {
+    "NAME": "Vacillate",
+    "DESCRIPTION": "Choose an enemy with travelerstsmod:Whispers. NL The target loses Strength this turn at the amount equal to the travelerstsmod:Verses you have."
+  },
+  "TravelerSTSMod:BarrierSpell": {
+    "NAME": "Barrier Spell",
+    "DESCRIPTION": "Gain !B! Block. NL At 2 travelerstsmod:Verses: Multiply this Block by !M! times."
+  },
+  "TravelerSTSMod:Wrath": {
+    "NAME": "Wrath",
+    "DESCRIPTION": "*Personality. NL Draw !M! cards. NL Once per turn, travelerstsmod:Action: Gain [E]."
+  },
+  "TravelerSTSMod:Envy": {
+    "NAME": "Envy",
+    "DESCRIPTION": "*Personality. NL Draw !M! cards. NL travelerstsmod:Action*: Gain 1 travelerstsmod:Verse."
+  },
+  "TravelerSTSMod:Organize": {
+    "NAME": "Organize Minds",
+    "DESCRIPTION": "Gain !B! Block. NL Gain [E] at the start of your next turn.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Gain [E] and draw a card at the start of your next turn."
+  },
+  "TravelerSTSMod:Tribute": {
+    "NAME": "Sacrifice",
+    "DESCRIPTION": "Lose 2 HP. NL Gain !M! travelerstsmod:Blood_Ink."
+  },
+  "TravelerSTSMod:DistortingStrike": {
+    "NAME": "Distorting Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Apply Vulnerable to each enemy with travelstsmod:Whispers at the same amount of its travelstsmod:Whispers.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Apply Vulnerable and Weak to each enemy with travelstsmod:Whispers at the same amount of its travelstsmod:Whispers."
+  },
+  "TravelerSTSMod:Paranoid": {
+    "NAME": "Paranoid",
+    "DESCRIPTION": "Deal !D! damage. NL Transform a card in hand to be a copy of this in this combat."
+  },
+  "TravelerSTSMod:ExplodeSpell": {
+    "NAME": "Explosion Spell",
+    "DESCRIPTION": "Deal !D! damage. NL At 6 travelerstsmod:Verses: Gain !M! [E]."
+  },
+  "TravelerSTSMod:CriticalAttack": {
+    "NAME": "Critical Attack",
+    "DESCRIPTION": "When this card is in your hand, costs 1 less for every 2 cards you play this turn. NL Deal !D! damage. NL Gain !B! Block."
+  },
+  "TravelerSTSMod:Notes": {
+    "NAME": "Notes",
+    "DESCRIPTION": "Mark an enemy in this game. NL If the species of the enemy is already marked, deal !D! damage and gain 1 travelerstsmod:Ink. NL Exhaust."
+  },
+  "TravelerSTSMod:Recount": {
+    "NAME": "Recount",
+    "DESCRIPTION": "Apply X travelerstsmod:Whispers. NL Play a copy of this which X effect is reduced by 1 when X is above 0. (damage = (p^3 + 2p)/3, p=X)",
+    "UPGRADE_DESCRIPTION": "Apply X+1 travelerstsmod:Whispers. NL Play a copy of this which X effect is reduced by 1 when X+1 is above 0. (damage = (p^3 + 2p)/3, p=X+1)"
+  },
+  "TravelerSTSMod:MindShock": {
+    "NAME": "Mind Shock",
+    "DESCRIPTION": "Apply !M! travelerstsmod:Whispers to ALL enemies."
+  },
+  "TravelerSTSMod:Palindrome": {
+    "NAME": "Palindrome",
+    "DESCRIPTION": "This turn, your next !M! Spells is played twice."
+  },
+  "TravelerSTSMod:Caustic": {
+    "NAME": "Corrode",
+    "DESCRIPTION": "Apply 3 travelerstsmod:Whispers. Consume 1 travelerstsmod:Ink: Apply 3 travelerstsmod:Whispers again.",
+    "UPGRADE_DESCRIPTION": "Consume 1 travelerstsmod:Ink: Double the travelerstsmod:Verses on the target. This no longer consumes *Ink in this combat."
+  },
+  "TravelerSTSMod:MemoryLoss": {
+    "NAME": "Memory Loss",
+    "DESCRIPTION": "Consume 1 travelerstsmod:Ink: NL Play the last card shuffled into discard pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Consume 1 travelerstsmod:Ink: NL Play the last card shuffled into discard pile and add it to hand."
+  },
+  "TravelerSTSMod:VajraSpell": {
+    "NAME": "Adamas Spell",
+    "DESCRIPTION": "Consume 1 travelerstsmod:Ink: Gain !M! Strength and Dexterity. NL Exhaust."
+  },
+  "TravelerSTSMod:LiteraryTalent": {
+    "NAME": "Brilliant Writing",
+    "DESCRIPTION": "Consume 1 travelerstsmod:Ink: Gain 2 [E] and draw 3 cards. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Consume 1 travelerstsmod:Ink: Gain 2 [E] and draw 3 cards."
+  },
+  "TravelerSTSMod:Squeeze": {
+    "NAME": "Squeeze",
+    "DESCRIPTION": "Discard ALL 0-cost cards, unplayable Status and Curses in hand. NL Gain [E] for each card discarded."
+  },
+  "TravelerSTSMod:ThinkHard": {
+    "NAME": "Pondering",
+    "DESCRIPTION": "Draw 5 cards. NL At 2 travelerstsmod:Verses: Retain up to !M! cards in hand in this turn."
+  },
+  "TravelerSTSMod:SpellIntensify": {
+    "NAME": "Spell Intensification",
+    "DESCRIPTION": "For each other Spell you've played this turn, NL draw !M! card.",
+    "UPGRADE_DESCRIPTION": "Innate. NL For each Spell you've play this turn, NL draw a card."
+  },
+  "TravelerSTSMod:SurgeSpell": {
+    "NAME": "Surging Spell",
+    "DESCRIPTION": "Gain [E] equal to half amount of travelerstsmod:Verses you have. NL Exhaust."
+  },
+  "TravelerSTSMod:AbsorbSpell": {
+    "NAME": "Absortion Spell",
+    "DESCRIPTION": "Gain !B! Block. NL At 4 travelerstsmod:Verses: Convert attack damage Blocked this turn to your Block next turn."
+  },
+  "TravelerSTSMod:Sloth": {
+    "NAME": "Sloth",
+    "DESCRIPTION": "*Personality . NL Draw 2 cards. NL travelerstsmod:Action: Gain !M! Block."
+  },
+  "TravelerSTSMod:Lust": {
+    "NAME": "Lust",
+    "DESCRIPTION": "*Personality . NL Draw 2 cards. NL travelerstsmod:Action: Apply !M! travelerstsmod:Whispers to a random enemy."
+  },
+  "TravelerSTSMod:ContractSpell": {
+    "NAME": "Contract Spell",
+    "DESCRIPTION": "Gain !B! Block. NL Adjacent cards cost 0 until they are played this turn."
+  },
+  "TravelerSTSMod:BadOmen": {
+    "NAME": "Evil Omen",
+    "DESCRIPTION": "The enemy keeps ALL travelerstsmod:Whispers at the start of its next turn."
+  },
+  "TravelerSTSMod:Illusion": {
+    "NAME": "Illusion",
+    "DESCRIPTION": "Add a random *Personality to your hand. NL It costs 0 this turn. NL Exhaust."
+  },
+  "TravelerSTSMod:Solidify": {
+    "NAME": "Concretion",
+    "DESCRIPTION": "Gain !B! Block plus !M! for each travelerstsmod:Ink you have."
+  },
+  "TravelerSTSMod:Chant": {
+    "NAME": "Chant",
+    "DESCRIPTION": "At 2 travelerstsmod:Verses: ALL your Spells cost 1 less next turn.",
+    "UPGRADE_DESCRIPTION": "At 2 travelerstsmod:Verses: ALL your Spells cost 1 less next turn. At 6 travelerstsmod:Verses also works."
+  },
+  "TravelerSTSMod:Gluttony": {
+    "NAME": "Gluttony",
+    "DESCRIPTION": "*Personality. NL Draw 2 cards. NL travelerstsmod:Action: Upgrade the card that triggers this.",
+    "UPGRADE_DESCRIPTION": "*Personality. NL Draw 2 cards. NL travelerstsmod:Action: Upgrade the card that triggers this and the cards in the between."
+  },
+  "TravelerSTSMod:MindSplit": {
+    "NAME": "Schizophrenia",
+    "DESCRIPTION": "Apply 3 travelerstsmod:Whispers. NL If this triggers a *Personality's travelerstsmod:Action, return this to hand after playing and increase this gain by 2.",
+    "UPGRADE_DESCRIPTION": "Apply 3 travelerstsmod:Whispers to ALL enemies. NL If this triggers a *Personality's travelerstsmod:Action, return this to hand after playing and increase this gain by 2."
+  },
+  "TravelerSTSMod:Inking": {
+    "NAME": "Inking",
+    "DESCRIPTION": "Ethereal. NL Consume 1 travelerstsmod:Ink: Add an additional card reward in the non-boss combat reward.",
+    "UPGRADE_DESCRIPTION": "Consume 1 travelerstsmod:Ink: Add an additional card reward in the non-boss combat reward."
+  },
+  "TravelerSTSMod:HeartLock": {
+    "NAME": "Heart Lock",
+    "DESCRIPTION": "Whenever travelerstsmod:Verse reaches 7 stacks, reset it to 1 and gain !M! Block."
+  },
+  "TravelerSTSMod:SpellAmplify": {
+    "NAME": "Spell Amplification",
+    "DESCRIPTION": "After you play a Spell, gain !M! travelerstsmod:Verse."
+  },
+  "TravelerSTSMod:Melody": {
+    "NAME": "Melodies",
+    "DESCRIPTION": "Whenever travelerstsmod:Verse reaches 4 stacks, draw a card.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever travelerstsmod:Verse reaches 4 stacks, draw a card."
+  },
+  "TravelerSTSMod:EchoSpell": {
+    "NAME": "Echo Spell",
+    "DESCRIPTION": "travelerstsmod:Whispers is reduced by half instead of ALL at the start of enemies' turn."
+  },
+  "TravelerSTSMod:Swallow": {
+    "NAME": "Swallow",
+    "DESCRIPTION": "Deal !D! damage. If Fatal, gain !M! travelerstsmod:Ink. NL Exhaust."
+  },
+  "TravelerSTSMod:FromAbyss": {
+    "NAME": "From The Abyss",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL If you have no travelerstsmod:Ink, gain 1 travelerstsmod:Ink and deal double damage instead."
+  },
+  "TravelerSTSMod:Somniloquy": {
+    "NAME": "Somniloquy",
+    "DESCRIPTION": "Draw cards equal to the amount of travelerstsmod:Verses -1. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw cards equal to the amount of travelerstsmod:Verses. NL Exhaust."
+  },
+  "TravelerSTSMod:TimePassed": {
+    "NAME": "Passage",
+    "DESCRIPTION": "Choose a card in hand to become a copy of another card in hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Choose a card in hand to become a copy of another card in hand."
+  },
+  "TravelerSTSMod:Greed": {
+    "NAME": "Greed",
+    "DESCRIPTION": "*Personality. NL Draw !M! cards. NL travelerstsmod:Action: Draw a card."
+  },
+  "TravelerSTSMod:Transcend": {
+    "NAME": "Transcendence",
+    "DESCRIPTION": "Consume 2 travelerstsmod:Ink: Gain an extra turn and end your turn. NL Exhaust."
+  },
+  "TravelerSTSMod:Alchemy": {
+    "NAME": "Alchemy",
+    "DESCRIPTION": "Gain !B! Block. NL At 3 travelerstsmod:Verses: Gain !M! golds. NL Exhaust."
+  },
+  "TravelerSTSMod:SpellSearch": {
+    "NAME": "Search Spell",
+    "DESCRIPTION": "Innate. NL Choose a Spell in draw pile and move it to hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Choose a Spell in draw pile and move it to hand."
+  },
+  "TravelerSTSMod:VoidBelief": {
+    "NAME": "Void Belief",
+    "DESCRIPTION": "Gain !M! [E]. NL Decrease by 1 for the rest of the combat."
+  },
+  "TravelerSTSMod:Recall": {
+    "NAME": "Retrospect",
+    "DESCRIPTION": "If discard pile size is less than or equal to max hand size, swap ALL your hand with the cards in discard pile."
+  },
+  "TravelerSTSMod:PrideForm": {
+    "NAME": "Pride Form",
+    "DESCRIPTION": "Ethereal. *Personality. NL Add a random *Personality to your hand at the start of your turn. The *Personality gains Ethereal. NL travelerstsmod:Action: This costs 1 less.",
+    "UPGRADE_DESCRIPTION": "Innate. *Personality. NL Add a random *Personality to your hand at the start of your turn. Upgrade the *Personality and it gains Ethereal. NL travelerstsmod:Action: This costs 1 less."
+  },
+  "TravelerSTSMod:GazeOfAbyss": {
+    "NAME": "Gaze From The Abyss",
+    "DESCRIPTION": "At the start of your turn, apply travelerstsmod:Whispers to a random enemy at the amount equal to travelerstsmod:Verses you have at the end of last turn.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, apply travelerstsmod:Whispers to ALL enemies at the amount equal to travelerstsmod:Verses you have at the end of last turn."
+  },
+  "TravelerSTSMod:Degenerate": {
+    "NAME": "Degeneration",
+    "DESCRIPTION": "*Personality's travelerstsmod:Action will trigger one another time.",
+    "UPGRADE_DESCRIPTION": "Innate. NL *Personality's travelerstsmod:Action will trigger one another time."
+  },
+  "TravelerSTSMod:QuickCasting": {
+    "NAME": "Swift Casting",
+    "DESCRIPTION": "Spells cost 0. NL Whenever you play a Spell, Exhaust it and draw a card."
+  },
+  "TravelerSTSMod:VoiceOfDark": {
+    "NAME": "Voice Of Darkness",
+    "DESCRIPTION": "Whenever you apply travelerstsmod:Whispers to an enemy, apply Poison to the enemy at the same amount."
+  },
+  "TravelerSTSMod:AnotherPath": {
+    "NAME": "Another Path",
+    "DESCRIPTION": "Choose a card in hand. NL If the chosen has extra effect at some travelerstsmod:Verses, set your *Verses to it needs.",
+    "UPGRADE_DESCRIPTION": "Choose a card in hand. NL If the chosen has extra effect at some travelerstsmod:Verses, it costs 1 less and set your *Verses to it needs."
+  },
+  "TravelerSTSMod:Inspire": {
+    "NAME": "Inspiration",
+    "DESCRIPTION": "Gain !B! Block. NL If you have 2 or more travelerstsmod:Ink, draw 2 cards."
+  },
+  "TravelerSTSMod:SpellKit": {
+    "NAME": "Spell Kit",
+    "DESCRIPTION": "Add X random Spells to your hand. NL Each of them costs 0 until you play it this turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add X+1 random Spells to your hand. NL Each of them costs 0 until you play it this turn."
+  },
+  "TravelerSTSMod:SilentSpell": {
+    "NAME": "Silence Spell",
+    "DESCRIPTION": "Remove ALL travelerstsmod:Whispers from ALL enemies. NL Gain Plated Armor equal to the *Whispers removed. NL  Exhaust .",
+    "EXTENDED_DESCRIPTION": [
+      "(Gain !B! Block.)"
+    ],
+    "UPGRADE_DESCRIPTION": "Remove ALL travelerstsmod:Whispers from ALL enemies. NL Gain Plated Armor equal to the *Whispers removed."
+  }
+}

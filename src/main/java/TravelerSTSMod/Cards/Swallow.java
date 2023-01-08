@@ -30,8 +30,10 @@ public class Swallow extends CustomCard {
     public Swallow() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseDamage = 10;
-        this.damage = 10;
+        this.isSeen = true;
+
+        this.baseDamage = 11;
+        this.damage = 11;
         this.baseMagicNumber = 1;
         this.magicNumber = 1;
         this.exhaust = true;
@@ -41,7 +43,7 @@ public class Swallow extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(5);
+            this.upgradeDamage(4);
             this.upgradeMagicNumber(1);
         }
     }

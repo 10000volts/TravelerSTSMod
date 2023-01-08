@@ -3,6 +3,7 @@ package TravelerSTSMod.Cards;
 import TravelerSTSMod.Actions.EmptySpellAction;
 import TravelerSTSMod.Cards.Abstract.PersonalityCard;
 import TravelerSTSMod.Characters.Traveler;
+import TravelerSTSMod.Powers.PrideFormPower;
 import TravelerSTSMod.Powers.SentencePower;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -31,6 +32,8 @@ public class Greed extends PersonalityCard {
     public Greed(boolean ethereal) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ethereal);
 
+        this.isSeen = true;
+
         this.baseMagicNumber = 2;
         this.magicNumber = 2;
 
@@ -48,6 +51,14 @@ public class Greed extends PersonalityCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
+        }
+    }
+
+    public void applyPowers() {
+        super.applyPowers();
+        if (isEthereal) {
+            this.rawDescription = PrideFormPower.DESCRIPTIONS[1] + DESCRIPTION;
+            initializeDescription();
         }
     }
 

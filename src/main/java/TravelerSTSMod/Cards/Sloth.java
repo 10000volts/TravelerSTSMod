@@ -2,6 +2,7 @@ package TravelerSTSMod.Cards;
 
 import TravelerSTSMod.Cards.Abstract.PersonalityCard;
 import TravelerSTSMod.Characters.Traveler;
+import TravelerSTSMod.Powers.PrideFormPower;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -28,6 +29,8 @@ public class Sloth extends PersonalityCard {
     public Sloth(boolean ethereal) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ethereal);
 
+        this.isSeen = true;
+
         this.baseMagicNumber = 3;
         this.magicNumber = 3;
     }
@@ -44,6 +47,14 @@ public class Sloth extends PersonalityCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
+        }
+    }
+
+    public void applyPowers() {
+        super.applyPowers();
+        if (isEthereal) {
+            this.rawDescription = PrideFormPower.DESCRIPTIONS[1] + DESCRIPTION;
+            initializeDescription();
         }
     }
 

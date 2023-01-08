@@ -1,6 +1,7 @@
 package TravelerSTSMod.Cards;
 
 import TravelerSTSMod.Actions.EmptySpellAction;
+import TravelerSTSMod.Cards.Abstract.ISpecificSentence;
 import TravelerSTSMod.Cards.Abstract.PersonalityCard;
 import TravelerSTSMod.Characters.Traveler;
 import TravelerSTSMod.Powers.ChantPower;
@@ -16,7 +17,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.ArrayList;
 
-public class EmptySpell extends PersonalityCard {
+public class EmptySpell extends PersonalityCard implements ISpecificSentence {
     public static final String ID = "TravelerSTSMod:EmptySpell";
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = CARD_STRINGS.NAME;
@@ -36,6 +37,8 @@ public class EmptySpell extends PersonalityCard {
     public EmptySpell(int influenced) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, false);
         this.costInfluencedLastTurn = influenced;
+
+        this.isSeen = true;
 
         this.baseMagicNumber = 2;
         this.magicNumber = 2;
@@ -153,5 +156,10 @@ public class EmptySpell extends PersonalityCard {
             if (this.costForTurn < 0)
                 this.costForTurn = 0;
         }
+    }
+
+    @Override
+    public int getSpecificSentence(boolean general) {
+        return 4;
     }
 }

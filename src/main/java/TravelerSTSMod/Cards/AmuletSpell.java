@@ -1,5 +1,6 @@
 package TravelerSTSMod.Cards;
 
+import TravelerSTSMod.Cards.Abstract.ISpecificSentence;
 import TravelerSTSMod.Cards.Abstract.SpellCard;
 import TravelerSTSMod.Characters.Traveler;
 import TravelerSTSMod.ModCore.TravelerMod;
@@ -22,7 +23,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
-public class AmuletSpell extends SpellCard implements SentencePower.IOnSentenceChanged {
+public class AmuletSpell extends SpellCard implements SentencePower.IOnSentenceChanged, ISpecificSentence {
     public static final String ID = "TravelerSTSMod:AmuletSpell";
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = CARD_STRINGS.NAME;
@@ -37,6 +38,8 @@ public class AmuletSpell extends SpellCard implements SentencePower.IOnSentenceC
 
     public AmuletSpell(int influenced) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, influenced);
+
+        this.isSeen = true;
 
         this.baseDamage = 6;
         this.damage = 6;
@@ -83,7 +86,11 @@ public class AmuletSpell extends SpellCard implements SentencePower.IOnSentenceC
 //        }
         else {
             for (AbstractPower pw: AbstractDungeon.player.powers) {
-                if (pw.ID.equals(ChantPower.POWER_ID)) {
+                if (pw.ID.equals(QuickCasting.ID)) {
+                    tmpCost = 0;
+                    this.costInfluencedLastTurn = 0;
+                }
+                else if (pw.ID.equals(ChantPower.POWER_ID)) {
                     int m = Math.min(tmpCost, pw.amount);
                     tmpCost -= m;
                     this.costInfluencedLastTurn += m;
@@ -115,5 +122,10 @@ public class AmuletSpell extends SpellCard implements SentencePower.IOnSentenceC
             this.costDecrease += 1;
             this.updateCost(this.cost);
         }
+    }
+
+    @Override
+    public int getSpecificSentence(boolean general) {
+        return general ? 5 : -1;
     }
 }

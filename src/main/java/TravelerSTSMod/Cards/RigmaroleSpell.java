@@ -29,6 +29,8 @@ public class RigmaroleSpell extends SpellCard {
     public RigmaroleSpell(int influenced) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, influenced);
 
+        this.isSeen = true;
+
         this.baseDamage = 10;
         this.damage = 10;
         this.shuffleBackIntoDrawPile = true;

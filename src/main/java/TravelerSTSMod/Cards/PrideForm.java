@@ -2,12 +2,10 @@ package TravelerSTSMod.Cards;
 
 import TravelerSTSMod.Cards.Abstract.PersonalityCard;
 import TravelerSTSMod.Characters.Traveler;
-import TravelerSTSMod.Powers.PrideFormPower;
-import TravelerSTSMod.Powers.PrideFormPowerUpgraded;
-import TravelerSTSMod.Powers.SentencePower;
-import TravelerSTSMod.Powers.SpellAmplifyPower;
+import TravelerSTSMod.Powers.*;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -29,29 +27,41 @@ public class PrideForm extends PersonalityCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final int COST = 3;
 
-    public PrideForm(boolean ethereal) {
+    public boolean isMadeByPrideForm;
+
+    public PrideForm(boolean ethereal, boolean isMadeByPrideForm) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ethereal);
 
+        this.isSeen = true;
+
+        this.isMadeByPrideForm = isMadeByPrideForm;
         this.isEthereal = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (this.upgraded) {
-            addToBot(new ApplyPowerAction(p, p, new PrideFormPowerUpgraded(p, 1), 1));
-        } else {
-            addToBot(new ApplyPowerAction(p, p, new PrideFormPower(p, 1), 1));
+//            if (p.hasPower(PrideFormPowerUpgraded.POWER_ID)) return;
+//            if (p.hasPower(PrideFormPower.POWER_ID)) {
+//                addToBot(new RemoveSpecificPowerAction(p, p, PrideFormPower.POWER_ID));
+//            }
+            addToBot(new ApplyPowerAction(p, p, new PrideFormPowerUpgraded(p), 1));
+        } else if (!p.hasPower(PrideFormPowerUpgraded.POWER_ID)) {
+//            if (p.hasPower(PrideFormPower.POWER_ID)) return;
+            addToBot(new ApplyPowerAction(p, p, new PrideFormPower(p), 1));
         }
         // addToBot(new DrawCardAction(p, this.magicNumber));
     }
 
     public AbstractCard makeCopy() {
-        return new PrideForm(this.isEthereal);
+        return new PrideForm(this.isEthereal, this.isMadeByPrideForm);
     }
 
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            this.isEthereal = false;
+            if (!this.isMadeByPrideForm) {
+                this.isEthereal = false;
+            }
             this.isInnate = true;
             this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             initializeDescription();

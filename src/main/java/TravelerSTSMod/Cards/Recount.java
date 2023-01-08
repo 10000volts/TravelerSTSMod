@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
@@ -35,7 +36,30 @@ public class Recount extends CustomCard {
 
     public Recount() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+
+        this.isSeen = true;
     }
+
+//    public void calculateCardDamage(AbstractMonster mo) {
+//        AbstractPlayer p = AbstractDungeon.player;
+//        int x = EnergyPanel.totalCount + (this.upgraded ? 1 : 0);
+//
+//        if (p.hasRelic("Chemical X")) {
+//            x += 2;
+//        }
+//        int d = (int)((Math.pow(x-1, 3) + 5*(x-1)) / 3 + Math.pow(x-1, 2) + 1);
+//        // 本来已有的低语层数
+//        for (AbstractPower pw : mo.powers) {
+//            if (pw.ID.equals(WhisperPower.POWER_ID)){
+//                d += (pw.amount - 1) * (x + 1) + 1;
+//                break;
+//            }
+//        }
+//
+//        this.rawDescription = DESCRIPTION + CARD_STRINGS.EXTENDED_DESCRIPTION[0] + d +
+//                CARD_STRINGS.EXTENDED_DESCRIPTION[1];
+//        initializeDescription();
+//    }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!this.isCopy) {

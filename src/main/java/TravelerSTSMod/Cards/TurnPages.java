@@ -26,12 +26,21 @@ public class TurnPages extends CustomCard {
     public TurnPages() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
+        this.isSeen = true;
+
         this.baseBlock = 0;
+    }
+
+    public void applyPowers() {
+        this.baseBlock = SentencePower.getSentence(AbstractDungeon.player) + (upgraded ? 2 : 0);
+        super.applyPowers();
+        this.rawDescription = DESCRIPTION + CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+        initializeDescription();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p,
-                this.block + SentencePower.getSentence(p)));
+                this.block));
         SentencePower.increaseSentence(p, -SentencePower.getSentence(p));
     }
 

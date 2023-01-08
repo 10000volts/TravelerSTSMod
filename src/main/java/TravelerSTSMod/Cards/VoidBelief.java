@@ -27,14 +27,16 @@ public class VoidBelief extends CustomCard {
     private static final CardColor COLOR = Traveler.Enums.TRAVELER_CARD;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final int COST = 1;
+    private static final int COST = 0;
 
 
     public VoidBelief() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseMagicNumber = 0;
-        this.magicNumber = 0;
+        this.isSeen = true;
+
+        this.baseMagicNumber = 3;
+        this.magicNumber = 3;
     }
 
     @Override
@@ -47,7 +49,10 @@ public class VoidBelief extends CustomCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new VoidBelief();
+        AbstractCard c = new VoidBelief();
+        c.magicNumber = this.magicNumber - (this.upgraded ? 1 : 0);
+        c.baseMagicNumber = this.baseMagicNumber - (this.upgraded ? 1 : 0);
+        return c;
     }
 
     @Override
@@ -58,9 +63,10 @@ public class VoidBelief extends CustomCard {
             @Override
             public void update() {
                 for (AbstractCard c : GetAllInBattleInstances.get(c.uuid)) {
-                    c.baseMagicNumber += 1;
-                    if (c.baseMagicNumber < 0)
+                    if (c.baseMagicNumber < 1)
                         c.baseMagicNumber = 0;
+                    else
+                        c.baseMagicNumber -= 1;
                     c.magicNumber = c.baseMagicNumber;
                 }
                 this.isDone = true;

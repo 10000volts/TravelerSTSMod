@@ -1,0 +1,35 @@
+[
+  {
+    "NAMES": [
+      "Whisper",
+      "Whispers"
+    ],
+    "DESCRIPTION": "After playing a card, deal damage to each one with #ywhispers equal to the #ywhispers it has and then #ywhisper is reduced by #b1. #yWhisper removes at the start of the owner turn."
+  },
+  {
+    "NAMES": [
+      "Action",
+      "Action*"
+    ],
+    "DESCRIPTION": "Whenever a card between two #yPersonalities is played, the #yactions on the personalities will be triggered. #yAction* will be triggered after the card in between is played. #rNOT #rONLY #rthe #ractions #rof #rthe #rnearest #rpersonalities #rwill #ractivate."
+  },
+  {
+    "NAMES": [
+      "Blood_Ink"
+    ],
+    "DESCRIPTION": "Whenever there's a need to consume #yInk, consume #yBlood #yInk instead. #yBlood #yInk is reduced by #b1 at the start of turn."
+  },
+  {
+    "NAMES": [
+      "Verse",
+      "Verses"
+    ],
+    "DESCRIPTION": "#yVerse is increased by #b1 when you play a card and will reset to #b1 at the start of turn."
+  },
+  {
+    "NAMES": [
+      "Ink"
+    ],
+    "DESCRIPTION": "#yInk retains over combats. Gain #b1 #yInk after entering a room."
+  }
+]

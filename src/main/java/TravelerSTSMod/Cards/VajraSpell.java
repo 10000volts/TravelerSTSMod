@@ -33,6 +33,8 @@ public class VajraSpell extends SpellCard {
     public VajraSpell(int influenced) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, influenced);
 
+        this.isSeen = true;
+
         this.baseMagicNumber = 1;
         this.magicNumber = 1;
         this.exhaust = true;

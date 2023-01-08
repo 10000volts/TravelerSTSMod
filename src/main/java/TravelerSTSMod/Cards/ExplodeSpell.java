@@ -1,5 +1,6 @@
 package TravelerSTSMod.Cards;
 
+import TravelerSTSMod.Cards.Abstract.ISpecificSentence;
 import TravelerSTSMod.Cards.Abstract.SpellCard;
 import TravelerSTSMod.Characters.Traveler;
 import TravelerSTSMod.Powers.SentencePower;
@@ -15,7 +16,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ExplodeSpell extends SpellCard {
+public class ExplodeSpell extends SpellCard implements ISpecificSentence {
     public static final String ID = "TravelerSTSMod:ExplodeSpell";
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = CARD_STRINGS.NAME;
@@ -31,8 +32,13 @@ public class ExplodeSpell extends SpellCard {
     public ExplodeSpell(int influenced) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, influenced);
 
+        this.isSeen = true;
+
         this.baseDamage = 17;
         this.damage = 17;
+
+        this.baseMagicNumber = 2;
+        this.magicNumber = 2;
     }
 
     @Override
@@ -40,6 +46,7 @@ public class ExplodeSpell extends SpellCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeDamage(5);
+            this.upgradeMagicNumber(1);
         }
     }
 
@@ -54,7 +61,7 @@ public class ExplodeSpell extends SpellCard {
             new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL),
             AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         if (SentencePower.getSentence(AbstractDungeon.player) == 6) {
-            addToBot(new GainEnergyAction(2));
+            addToBot(new GainEnergyAction(this.magicNumber));
         }
     }
 
@@ -63,5 +70,10 @@ public class ExplodeSpell extends SpellCard {
         if (SentencePower.getSentence(AbstractDungeon.player) == 6) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
+    }
+
+    @Override
+    public int getSpecificSentence(boolean general) {
+        return 6;
     }
 }

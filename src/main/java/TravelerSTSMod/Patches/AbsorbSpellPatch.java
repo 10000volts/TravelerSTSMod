@@ -1,6 +1,8 @@
 package TravelerSTSMod.Patches;
 
+import TravelerSTSMod.Cards.AbsorbSpell;
 import TravelerSTSMod.Cards.Inking;
+import TravelerSTSMod.Powers.AbsorbSpellPower;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -20,11 +22,12 @@ public class AbsorbSpellPatch {
         if (info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS &&
                 info.owner != null && info.owner != self) {
             for (AbstractPower pw : self.powers) {
-                if (pw.ID.equals("TravelerSTSMod:AbsorbSpell")) {
+                if (pw.owner == null) {return;}
+                int a = Math.min(d, pw.owner.currentBlock);
+                if (pw.ID.equals(AbsorbSpellPower.POWER_ID) && a > 0) {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(pw.owner, pw.owner,
                             new NextTurnBlockPower(pw.owner,
-                                    Math.min(d, pw.owner.currentBlock),
-                                    pw.name), Math.min(d, pw.owner.currentBlock)));
+                                    a, pw.name), a));
                     pw.flash();
                     return;
                 }

@@ -2,6 +2,7 @@ package TravelerSTSMod.Cards;
 
 import TravelerSTSMod.Cards.Abstract.PersonalityCard;
 import TravelerSTSMod.Characters.Traveler;
+import TravelerSTSMod.Powers.PrideFormPower;
 import TravelerSTSMod.Powers.SentencePower;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
@@ -32,6 +33,8 @@ public class Wrath extends PersonalityCard {
     public Wrath(boolean ethereal) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ethereal);
 
+        this.isSeen = true;
+
         this.baseMagicNumber = 2;
         this.magicNumber = 2;
 
@@ -57,6 +60,14 @@ public class Wrath extends PersonalityCard {
     public void atTurnStart() {
         super.atTurnStart();
         this.acted = false;
+    }
+
+    public void applyPowers() {
+        super.applyPowers();
+        if (isEthereal) {
+            this.rawDescription = PrideFormPower.DESCRIPTIONS[1] + DESCRIPTION;
+            initializeDescription();
+        }
     }
 
     @Override

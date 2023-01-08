@@ -28,6 +28,8 @@ public class Paranoid extends CustomCard {
     public Paranoid() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
+        this.isSeen = true;
+
         this.baseDamage = 9;
         this.damage = 9;
     }

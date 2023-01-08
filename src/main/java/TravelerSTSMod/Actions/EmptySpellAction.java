@@ -40,7 +40,7 @@ public class EmptySpellAction extends AbstractGameAction {
             p.hand.group.removeAll(cannotExhaust);
 
             AbstractDungeon.handCardSelectScreen.open(
-                    CardCrawlGame.languagePack.getUIString("ExhaustAction").TEXT[0], 1,
+                    CardCrawlGame.languagePack.getUIString("TravelerSTSMod:EmptySpellAction").TEXT[0], 1,
                     true, true);
             tickDuration();
             return;

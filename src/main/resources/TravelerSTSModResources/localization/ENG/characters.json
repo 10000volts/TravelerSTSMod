@@ -1,0 +1,17 @@
+{
+  "TravelerSTSMod:Traveler": {
+    "NAMES": [
+      "The Traveler"
+    ],
+    "TEXT": [
+      "Killing between the worlds, she had forgotten everything. NL To find the lost memories, she comes here with the deteriorating mind.",
+      "You whispering the spells..."
+    ]
+  },
+  "TravelerSTSMod:Neow": {
+    "NAMES": [
+      "Neow"
+    ],
+    "TEXT" : ["[ #rObtain #r2 #rCurses #gObtain #g1 #grandom #gboss #gRelic ]"]
+  }
+}

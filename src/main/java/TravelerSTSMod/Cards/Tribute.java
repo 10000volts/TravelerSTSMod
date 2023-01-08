@@ -35,8 +35,10 @@ public class Tribute extends CustomCard {
     public Tribute() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseMagicNumber = 1;
-        this.magicNumber = 1;
+        this.isSeen = true;
+
+        this.baseMagicNumber = 2;
+        this.magicNumber = 2;
     }
 
     @Override
@@ -59,7 +61,7 @@ public class Tribute extends CustomCard {
         } else {
             addToBot(new VFXAction(new OfferingEffect(), 0.5F));
         }
-        addToBot(new LoseHPAction(p, p, 1));
+        addToBot(new LoseHPAction(p, p, 2));
         addToBot(new ApplyPowerAction(p, p, new BloodInkPower(p, p, this.magicNumber), this.magicNumber));
     }
 }

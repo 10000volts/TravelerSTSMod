@@ -34,8 +34,10 @@ public class TemblorSpell extends SpellCard {
     public TemblorSpell(int influenced) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, influenced);
 
-        this.baseDamage = 10;
-        this.damage = 10;
+        this.isSeen = true;
+
+        this.baseDamage = 8;
+        this.damage = 8;
         this.baseMagicNumber = 5;
         this.magicNumber = 5;
     }
@@ -44,7 +46,7 @@ public class TemblorSpell extends SpellCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(1);
+            this.upgradeMagicNumber(2);
         }
     }
 
@@ -55,7 +57,7 @@ public class TemblorSpell extends SpellCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         addToBot(new ApplyPowerAction(m, p, new WhisperNextTurnPower(m, p, this.magicNumber), this.magicNumber,
                 true, AbstractGameAction.AttackEffect.NONE));
     }

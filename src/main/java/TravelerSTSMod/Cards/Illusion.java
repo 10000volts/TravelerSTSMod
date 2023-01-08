@@ -31,6 +31,8 @@ public class Illusion extends CustomCard {
     public Illusion() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
+        this.isSeen = true;
+
         this.exhaust = true;
     }
 

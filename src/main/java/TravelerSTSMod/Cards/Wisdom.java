@@ -28,11 +28,13 @@ public class Wisdom extends CustomCard {
 
     public Wisdom() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+
+        this.isSeen = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!this.upgraded) {
-            addToBot(new RandomCardForFreeAction(null));
+            addToBot(new RandomCardForFreeAction(null, false, this));
         } else {
             addToBot(new WisdomAction(p, p, 1));
         }

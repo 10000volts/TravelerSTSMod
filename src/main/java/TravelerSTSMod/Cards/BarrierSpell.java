@@ -1,5 +1,6 @@
 package TravelerSTSMod.Cards;
 
+import TravelerSTSMod.Cards.Abstract.ISpecificSentence;
 import TravelerSTSMod.Cards.Abstract.SpellCard;
 import TravelerSTSMod.Characters.Traveler;
 import TravelerSTSMod.Powers.SentencePower;
@@ -15,7 +16,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class BarrierSpell extends SpellCard {
+public class BarrierSpell extends SpellCard implements ISpecificSentence {
     public static final String ID = "TravelerSTSMod:BarrierSpell";
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = CARD_STRINGS.NAME;
@@ -30,6 +31,8 @@ public class BarrierSpell extends SpellCard {
 
     public BarrierSpell(int influenced) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, influenced);
+
+        this.isSeen = true;
 
         this.baseBlock = 5;
         this.block = 5;
@@ -68,5 +71,10 @@ public class BarrierSpell extends SpellCard {
         if (SentencePower.getSentence(AbstractDungeon.player) == 2) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
+    }
+
+    @Override
+    public int getSpecificSentence(boolean general) {
+        return 2;
     }
 }

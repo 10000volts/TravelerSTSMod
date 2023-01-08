@@ -4,6 +4,7 @@ import TravelerSTSMod.Cards.Abstract.SpellCard;
 import TravelerSTSMod.Characters.Traveler;
 import TravelerSTSMod.Powers.SentencePower;
 import TravelerSTSMod.Relics.BookAndQuill;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
@@ -25,13 +26,20 @@ public class BirthSpell extends SpellCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final int COST = 1;
-
+    private int magicNumber2;
 
     public BirthSpell(int influenced) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, influenced);
 
+        this.isSeen = true;
+
+        this.baseMagicNumber = 2;
+        this.magicNumber = 2;
+        this.magicNumber2 = 3;
         this.isEthereal = true;
         this.exhaust = true;
+        FleetingField.fleeting.set(this, true);
+
         this.tags.add(AbstractCard.CardTags.HEALING);
     }
 
@@ -39,7 +47,10 @@ public class BirthSpell extends SpellCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(0);
+            this.upgradeMagicNumber(2);
+            this.magicNumber2 += 3;
+            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 
@@ -50,13 +61,7 @@ public class BirthSpell extends SpellCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new AbstractGameAction() {
-            @Override
-            public void update() {
-                BookAndQuill.increaseInk(p,1);
-                isDone = true;
-            }
-        });
-        addToBot(new HealAction(p, p, 1));
+        BookAndQuill.increaseInk(p, this.magicNumber);
+        addToBot(new HealAction(p, p, this.magicNumber2));
     }
 }

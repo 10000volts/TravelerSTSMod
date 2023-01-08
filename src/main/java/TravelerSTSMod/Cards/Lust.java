@@ -2,6 +2,7 @@ package TravelerSTSMod.Cards;
 
 import TravelerSTSMod.Cards.Abstract.PersonalityCard;
 import TravelerSTSMod.Characters.Traveler;
+import TravelerSTSMod.Powers.PrideFormPower;
 import TravelerSTSMod.Powers.WhisperPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -31,8 +32,10 @@ public class Lust extends PersonalityCard {
     public Lust(boolean ethereal) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ethereal);
 
-        this.baseMagicNumber = 1;
-        this.magicNumber = 1;
+        this.isSeen = true;
+
+        this.baseMagicNumber = 2;
+        this.magicNumber = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -47,6 +50,14 @@ public class Lust extends PersonalityCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
+        }
+    }
+
+    public void applyPowers() {
+        super.applyPowers();
+        if (isEthereal) {
+            this.rawDescription = PrideFormPower.DESCRIPTIONS[1] + DESCRIPTION;
+            initializeDescription();
         }
     }
 

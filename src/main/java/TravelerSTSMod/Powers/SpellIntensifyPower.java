@@ -46,7 +46,7 @@ public class SpellIntensifyPower extends AbstractPower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        super.onAfterUseCard(card, action);
+        super.onUseCard(card, action);
         if (card.tags.contains(Traveler.Enums.TRAVELER_SPELL)) {
             addToBot(new DrawCardAction(AbstractDungeon.player, this.amount));
         }

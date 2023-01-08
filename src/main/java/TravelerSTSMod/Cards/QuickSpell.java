@@ -28,6 +28,8 @@ public class QuickSpell extends SpellCard {
     public QuickSpell(int influenced) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, influenced);
 
+        this.isSeen = true;
+
         this.baseDamage = 6;
         this.damage = 6;
     }
@@ -50,6 +52,6 @@ public class QuickSpell extends SpellCard {
         addToBot(new DamageAction(m,
                 new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        addToBot(new RandomCardForFreeAction(Traveler.Enums.TRAVELER_SPELL));
+        addToBot(new RandomCardForFreeAction(Traveler.Enums.TRAVELER_SPELL, false, this));
     }
 }

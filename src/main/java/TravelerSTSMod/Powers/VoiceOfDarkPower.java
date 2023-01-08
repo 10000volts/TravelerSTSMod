@@ -22,12 +22,12 @@ public class VoiceOfDarkPower extends AbstractPower {
 
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public VoiceOfDarkPower(AbstractCreature owner) {
+    public VoiceOfDarkPower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
         this.type = PowerType.BUFF;
-        this.amount = -1;
+        this.amount = 1;
 
         // 添加一大一小两张能力图
         String path128 = "TravelerSTSModResources/img/powers/128/VoiceOfDark.png";
@@ -44,19 +44,28 @@ public class VoiceOfDarkPower extends AbstractPower {
     }
 
     @Override
-    public void atEndOfTurn(boolean isPlayer) {
-        super.atEndOfTurn(isPlayer);
-        if (isPlayer) {
-            AbstractPlayer p = AbstractDungeon.player;
-            for (AbstractMonster m : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-                for (AbstractPower pw : m.powers) {
-                    if (pw.ID.equals("TravelerSTSMod:Whisper")) {
-                        addToBot(new ApplyPowerAction(m, p, new PoisonPower(m, p, pw.amount), pw.amount,
-                                true, AbstractGameAction.AttackEffect.POISON));
-                        break;
-                    }
-                }
-            }
+    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
+        if (power.ID.equals(WhisperPower.POWER_ID) && source == this.owner && target != this.owner && !target.hasPower("Artifact")) {
+            flash();
+            addToBot(new ApplyPowerAction(target, this.owner, new PoisonPower(target, this.owner,
+                    power.amount * this.amount), power.amount * this.amount,true,
+                    AbstractGameAction.AttackEffect.POISON));
         }
     }
+//    public void atEndOfTurn(boolean isPlayer) {
+//        super.atEndOfTurn(isPlayer);
+//        if (isPlayer) {
+//            AbstractPlayer p = AbstractDungeon.player;
+//            for (AbstractMonster m : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
+//                for (AbstractPower pw : m.powers) {
+//                    if (pw.ID.equals(WhisperPower.POWER_ID)) {
+//                        addToBot(new ApplyPowerAction(m, p, new PoisonPower(m, p, pw.amount * this.amount),
+//                                pw.amount * this.amount,true,
+//                                AbstractGameAction.AttackEffect.POISON));
+//                        break;
+//                    }
+//                }
+//            }
+//        }
+//    }
 }

@@ -28,6 +28,8 @@ public class SpellSearch extends SpellCard {
     public SpellSearch(int influenced) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, influenced);
 
+        this.isSeen = true;
+
         this.isInnate = true;
         this.exhaust = true;
     }

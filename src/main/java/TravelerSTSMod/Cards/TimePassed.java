@@ -30,6 +30,8 @@ public class TimePassed extends CustomCard {
     public TimePassed() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
+        this.isSeen = true;
+
         this.exhaust = true;
     }
 
@@ -37,6 +39,7 @@ public class TimePassed extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            // this.upgradeBaseCost(0);
             this.exhaust = false;
             this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             initializeDescription();

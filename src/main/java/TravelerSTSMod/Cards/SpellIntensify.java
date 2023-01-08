@@ -32,14 +32,17 @@ public class SpellIntensify extends SpellCard {
 
     public SpellIntensify(int influenced) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, influenced);
+
+        this.baseMagicNumber = 1;
+        this.magicNumber = 1;
+        this.isSeen = true;
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
-            initializeDescription();
+            this.upgradeMagicNumber(1);
         }
     }
 
@@ -50,7 +53,7 @@ public class SpellIntensify extends SpellCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new SpellIntensifyPower(p, 1), 1));
-        addToBot(new DrawCardAction(p, 1));
+        addToBot(new ApplyPowerAction(p, p, new SpellIntensifyPower(p, this.magicNumber),
+                this.magicNumber));
     }
 }

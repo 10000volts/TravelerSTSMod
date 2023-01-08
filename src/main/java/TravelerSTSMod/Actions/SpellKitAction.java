@@ -38,7 +38,7 @@ public class SpellKitAction extends AbstractGameAction {
         if (effect > 0) {
             for (int i = 0; i < effect; i++) {
                 AbstractCard c = TravelerMod.spellPool.get(
-                        AbstractDungeon.cardRandomRng.random(TravelerMod.personalityPool.size() - 1));
+                        AbstractDungeon.cardRandomRng.random(TravelerMod.spellPool.size() - 1)).makeCopy();
                 c.setCostForTurn(0);
                 addToBot(new MakeTempCardInHandAction(c, 1));
             }

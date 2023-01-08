@@ -36,19 +36,27 @@ public class BlankMovement extends CustomRelic {
     }
 
     public void atBattleStart() {
-        int hpmax = 0;
-        AbstractMonster mmax = null;
-        ArrayList<AbstractMonster> am = AbstractDungeon.getMonsters().monsters;
-        for (AbstractMonster m : am) {
-            if (m.maxHealth > hpmax) {
-                hpmax = m.maxHealth;
-                mmax = m;
+        for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
+            if (!mo.isDeadOrEscaped()) {
+                addToBot(new ApplyPowerAction(mo, AbstractDungeon.player,
+                         new WhisperPower(mo, AbstractDungeon.player, 8), 8,
+                        true, AbstractGameAction.AttackEffect.NONE));
             }
         }
-        if (mmax != null) {
-            addToBot(new ApplyPowerAction(mmax, AbstractDungeon.player,
-                    new WhisperPower(mmax, AbstractDungeon.player, 10), 10,
-                    true, AbstractGameAction.AttackEffect.NONE));}
+
+//        int hpmax = 0;
+//        AbstractMonster mmax = null;
+//        ArrayList<AbstractMonster> am = AbstractDungeon.getMonsters().monsters;
+//        for (AbstractMonster m : am) {
+//            if (m.maxHealth > hpmax) {
+//                hpmax = m.maxHealth;
+//                mmax = m;
+//            }
+//        }
+//        if (mmax != null) {
+//            addToBot(new ApplyPowerAction(mmax, AbstractDungeon.player,
+//                    new WhisperPower(mmax, AbstractDungeon.player, 11), 11,
+//                    true, AbstractGameAction.AttackEffect.NONE));}
     }
 
     public AbstractRelic makeCopy() {

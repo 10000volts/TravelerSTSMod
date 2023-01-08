@@ -44,8 +44,6 @@ public class BookAndQuill extends CustomRelic {
     }
 
     public void atBattleStart() {
-        addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                new SentencePower(AbstractDungeon.player), 1));
         addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
     }
 
@@ -129,7 +127,7 @@ public class BookAndQuill extends CustomRelic {
                 } else if (p.hasRelic("TravelerSTSMod:AbyssInkBottle")) {
                     int hpcost = cost - bloodInkAmount - r.counter;
                     r.counter = 0;
-                    AbstractDungeon.actionManager.addToBottom(new LoseHPAction(p, p, hpcost * 2));
+                    AbstractDungeon.actionManager.addToBottom(new LoseHPAction(p, p, hpcost));
                     return true;
                 }
                 return false;

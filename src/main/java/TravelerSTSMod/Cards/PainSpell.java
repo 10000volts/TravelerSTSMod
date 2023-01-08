@@ -29,6 +29,8 @@ public class PainSpell extends SpellCard {
     public PainSpell(int influenced) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, influenced);
 
+        this.isSeen = true;
+
         this.baseDamage = 5;
         this.damage = 5;
     }
