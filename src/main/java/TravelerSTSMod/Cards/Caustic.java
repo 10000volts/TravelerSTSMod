@@ -42,7 +42,6 @@ public class Caustic extends CustomCard {
                 3, true, AbstractGameAction.AttackEffect.NONE));
         }
     }
-
     public AbstractCard makeCopy() {
         return new Caustic();
     }

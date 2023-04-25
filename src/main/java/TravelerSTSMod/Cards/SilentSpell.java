@@ -99,7 +99,6 @@ public class SilentSpell extends SpellCard {
         if (!this.upgraded) {
             upgradeName();
             this.exhaust = false;
-
             this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
