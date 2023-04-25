@@ -11,9 +11,9 @@
     <packaging>jar</packaging>
 
     <!-- 改成你需要的名称 -->
-    <name>TravelerSTSMod</name>
+    <name>Traveler</name>
     <!-- 改不改由你 -->
-    <description>不来挑战一下a20吗？</description>
+    <description></description>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -45,6 +45,13 @@
             <version>3.23.2</version>
             <scope>system</scope>
             <systemPath>${steam.path}/workshop/content/646570/1605060445/ModTheSpire.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.evacipated.cardcrawl</groupId>
+            <artifactId>stslib</artifactId>
+            <version>2.3.0</version>
+            <scope>system</scope>
+            <systemPath>${steam.path}/workshop/content/646570/1609158507/StSLib.jar</systemPath>
         </dependency>
     </dependencies>
 
