@@ -151,5 +151,12 @@
     "DESCRIPTIONS": [
       "回合开始时 #y低语 层数不会清零。"
     ]
+  },
+  "TravelerSTSMod:Enchant": {
+    "NAME": "附魔",
+    "DESCRIPTIONS": [
+      "打出指定目标的攻击牌后，给予目标 #b"
+      ," 层 #y低语 。"
+    ]
   }
 }

@@ -25,3 +25,6 @@ hs_err_pid*
 
 # Config files
 *.xml
+
+/target
+/.idea
