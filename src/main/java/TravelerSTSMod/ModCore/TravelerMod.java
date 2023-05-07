@@ -1,4 +1,5 @@
 package TravelerSTSMod.ModCore;
+
 import TravelerSTSMod.Cards.*;
 import TravelerSTSMod.Characters.Traveler;
 import TravelerSTSMod.Patches.SpellStormPatch;
@@ -6,19 +7,17 @@ import TravelerSTSMod.Potions.BottleSpell;
 import TravelerSTSMod.Potions.Ink;
 import TravelerSTSMod.Potions.Whisper;
 import TravelerSTSMod.Relics.*;
-import basemod.abstracts.CustomCard;
-import basemod.helpers.RelicType;
+import basemod.BaseMod;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import basemod.BaseMod;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.Prefs;
 import com.megacrit.cardcrawl.localization.*;
-import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
@@ -58,10 +57,12 @@ public class TravelerMod implements EditCharactersSubscriber,EditCardsSubscriber
 
     public static ArrayList<AbstractCard> personalityPool;
     public static ArrayList<AbstractCard> spellPool;
+    public static ArrayList<ArrayList> storageList;
 
     static {
         personalityPool = new ArrayList<>();
         spellPool = new ArrayList<>();
+        storageList = new ArrayList<>();
     }
 
     public TravelerMod() {
@@ -151,87 +152,91 @@ public class TravelerMod implements EditCharactersSubscriber,EditCardsSubscriber
     public void receiveEditCards() {
         addPersonalities();
         addSpells();
-        ArrayList<CustomCard> cards = new ArrayList<>();
-        cards.add(new Strike());
-        cards.add(new InkDrop());
-        cards.add(new Defend());
-        cards.add(new EmptySpell(0));
-        cards.add(new PainSpell(0));
-        cards.add(new SuddenStrike());
-        cards.add(new AmuletSpell(0));
-        cards.add(new HeartLock());
-        cards.add(new Melody());
-        cards.add(new BarrierSpell(0));
-        cards.add(new DistortingStrike());
-        cards.add(new FromAbyss());
-        cards.add(new Greed(false));
-        cards.add(new MindShock());
-        cards.add(new MindSnoop());
-        cards.add(new RigmaroleSpell(0));
-        cards.add(new Somniloquy());
-        cards.add(new Swallow());
-        cards.add(new Ghost());
-        cards.add(new SpellStorm(0));
-        cards.add(new Alchemy());
-        cards.add(new BirthSpell(0));
-        cards.add(new Envy(false));
-        cards.add(new Hypnotize());
-        cards.add(new InkSplash());
-        cards.add(new ShuttleSpell(0));
-        cards.add(new Sloth(false));
-        cards.add(new Solidify());
-        cards.add(new SurgeSpell(0));
-        cards.add(new TurnPages());
-        cards.add(new VajraSpell(0));
-        cards.add(new VoidBelief());
-        cards.add(new Wrath(false));
-        cards.add(new ExplodeSpell(0));
-        cards.add(new CriticalAttack(0, 0, CriticalAttack.COST));
-        cards.add(new LiteraryTalent());
-        cards.add(new ContractSpell(0));
-        cards.add(new Transcend());
-        cards.add(new Wisdom());
-        cards.add(new Vacillate());
-        cards.add(new Organize());
-        cards.add(new Paranoid());
-        cards.add(new SpellSearch(0));
-        cards.add(new QuickSpell(0));
-        cards.add(new Lust(false));
-        cards.add(new ThinkHard());
-        cards.add(new Recount());
-        cards.add(new Degenerate());
-        cards.add(new Gluttony(false));
-        cards.add(new SpellAmplify(0));
-        cards.add(new VoiceOfDark());
-        cards.add(new EchoSpell(0));
-        cards.add(new Inspire());
-        cards.add(new Palindrome());
-        cards.add(new TimePassed());
-        cards.add(new TemblorSpell(0));
-        cards.add(new Tribute());
-        cards.add(new Recall());
-        cards.add(new Chant());
-        cards.add(new SpellIntensify(0));
-        cards.add(new GazeOfAbyss());
-        cards.add(new Inking());
-        cards.add(new Illusion());
-        cards.add(new Squeeze());
-        cards.add(new AbsorbSpell(0));
-        cards.add(new BadOmen());
-        cards.add(new SpellKit(0));
-        cards.add(new PrideForm(false, false));
-        cards.add(new QuickCasting());
-        cards.add(new MindSplit());
-        cards.add(new SilentSpell(0));
-        cards.add(new AnotherPath());
-        cards.add(new Notes());
-        cards.add(new Caustic());
-        cards.add(new MemoryLoss());
-        for (CustomCard c : cards) {
-            System.out.println(c.name);
-            UnlockTracker.unlockCard(c.cardID);
-            BaseMod.addCard(c);
-        }
+        BaseMod.addCard(new Strike());
+        BaseMod.addCard(new InkDrop());
+        BaseMod.addCard(new Defend());
+        BaseMod.addCard(new EmptySpell(0));
+        BaseMod.addCard(new PainSpell(0));
+        BaseMod.addCard(new SuddenStrike());
+        BaseMod.addCard(new AmuletSpell(0));
+        BaseMod.addCard(new HeartLock());
+        BaseMod.addCard(new Melody());
+        BaseMod.addCard(new BarrierSpell(0));
+        BaseMod.addCard(new DistortingStrike());
+        BaseMod.addCard(new FromAbyss());
+        BaseMod.addCard(new Greed(false));
+        BaseMod.addCard(new MindShock());
+        BaseMod.addCard(new MindSnoop());
+        BaseMod.addCard(new RigmaroleSpell(0));
+        BaseMod.addCard(new Somniloquy());
+        BaseMod.addCard(new Swallow());
+        BaseMod.addCard(new Ghost());
+        BaseMod.addCard(new SpellStorm(0));
+        BaseMod.addCard(new Alchemy());
+        BaseMod.addCard(new BirthSpell(0));
+        BaseMod.addCard(new Envy(false));
+        BaseMod.addCard(new Hypnotize());
+        BaseMod.addCard(new InkSplash());
+        BaseMod.addCard(new ShuttleSpell(0));
+        BaseMod.addCard(new Sloth(false));
+        BaseMod.addCard(new Solidify());
+        BaseMod.addCard(new SurgeSpell(0));
+        BaseMod.addCard(new TurnPages());
+        BaseMod.addCard(new VajraSpell(0));
+        BaseMod.addCard(new VoidBelief());
+        BaseMod.addCard(new Wrath(false));
+        BaseMod.addCard(new ExplodeSpell(0));
+        BaseMod.addCard(new CriticalAttack(0, 0, CriticalAttack.COST));
+        BaseMod.addCard(new LiteraryTalent());
+        BaseMod.addCard(new ContractSpell(0));
+        BaseMod.addCard(new Transcend());
+        BaseMod.addCard(new Wisdom());
+        BaseMod.addCard(new Vacillate());
+        BaseMod.addCard(new Organize());
+        BaseMod.addCard(new Paranoid());
+        BaseMod.addCard(new SpellSearch(0));
+        BaseMod.addCard(new QuickSpell(0));
+        BaseMod.addCard(new Lust(false));
+        BaseMod.addCard(new ThinkHard());
+        BaseMod.addCard(new Recount());
+        BaseMod.addCard(new Degenerate());
+        BaseMod.addCard(new Gluttony(false));
+        BaseMod.addCard(new SpellAmplify(0));
+        BaseMod.addCard(new VoiceOfDark());
+        BaseMod.addCard(new EchoSpell(0));
+        BaseMod.addCard(new Inspire());
+        BaseMod.addCard(new Palindrome());
+        BaseMod.addCard(new TimePassed());
+        BaseMod.addCard(new TemblorSpell(0));
+        BaseMod.addCard(new Tribute());
+        BaseMod.addCard(new Recall());
+        BaseMod.addCard(new Chant());
+        BaseMod.addCard(new SpellIntensify(0));
+        BaseMod.addCard(new GazeOfAbyss());
+        BaseMod.addCard(new Inking());
+        BaseMod.addCard(new Illusion());
+        BaseMod.addCard(new Squeeze());
+        BaseMod.addCard(new AbsorbSpell(0));
+        BaseMod.addCard(new BadOmen());
+        BaseMod.addCard(new SpellKit(0));
+        BaseMod.addCard(new PrideForm(false, false));
+        BaseMod.addCard(new QuickCasting());
+        BaseMod.addCard(new MindSplit());
+        BaseMod.addCard(new SilentSpell(0));
+        BaseMod.addCard(new AnotherPath());
+        BaseMod.addCard(new Notes());
+        BaseMod.addCard(new Caustic());
+        BaseMod.addCard(new MemoryLoss());
+        BaseMod.addCard(new Execution());
+        BaseMod.addCard(new Enchant());
+        BaseMod.addCard(new Sakki());
+        BaseMod.addCard(new Analgesia());
+        BaseMod.addCard(new Doubt());
+        BaseMod.addCard(new Flashback());
+        BaseMod.addCard(new Bear());
+        BaseMod.addCard(new Tide());
+        BaseMod.addCard(new MemoryPieces());
+        BaseMod.addCard(new Parasites());
     }
 
     public void receiveEditPotions() {
@@ -293,8 +298,10 @@ public class TravelerMod implements EditCharactersSubscriber,EditCardsSubscriber
     }
 
     // 战斗结束时重置打出的咒语数为0
+    // 战斗结束时重置寄存列表为空
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
         SpellStormPatch.spellUsed = 0;
+        storageList.clear();
     }
 }

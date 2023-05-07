@@ -323,5 +323,45 @@
     "DESCRIPTION": "移除所有敌人身上的 travelerstsmod:低语 ，获得等量 多层护甲 。 消耗 。",
     "EXTENDED_DESCRIPTION": ["(获得 !B! 点 格挡 )"],
     "UPGRADE_DESCRIPTION": "移除所有敌人身上的 travelerstsmod:低语 ，获得等量 多层护甲 。"
+  },
+  "TravelerSTSMod:Execution": {
+    "NAME": "处刑",
+    "DESCRIPTION": "造成 !D! 点伤害 2 次。抽牌直到抽到的不是攻击牌。"
+  },
+  "TravelerSTSMod:Enchant": {
+    "NAME": "附魔",
+    "DESCRIPTION": "打出指定目标的攻击牌后，给予目标 !M! 层 低语 。"
+  },
+  "TravelerSTSMod:Sakki": {
+    "NAME": "杀意",
+    "DESCRIPTION": "打出攻击牌后 travelerstsmod:小句 + !M! 。"
+  },
+  "TravelerSTSMod:Analgesia": {
+    "NAME": "镇痛",
+    "DESCRIPTION": "选抽牌堆 !M! 卡 travelerstsmod:寄存 至 1 手牌，获得 1 力量 。"
+  },
+  "TravelerSTSMod:Doubt": {
+    "NAME": "怀疑",
+    "DESCRIPTION": "选 !M! 手牌 travelerstsmod:寄存 至抽牌堆 1 卡，抽等量的牌。"
+  },
+  "TravelerSTSMod:Flashback": {
+    "NAME": "闪回",
+    "DESCRIPTION": "打出或被 travelerstsmod:寄存 时，对所有敌人造成 !D! 点伤害。打出时，选择 1 张手牌 travelerstsmod:寄存 至这张卡。"
+  },
+  "TravelerSTSMod:Bear": {
+  "NAME": "承受",
+  "DESCRIPTION": "造成 !D! 点伤害。将抽牌堆，弃牌堆和手牌中所有诅咒牌和状态牌 travelerstsmod:寄存 至这张卡。每有1张，额外造成 !M! 点伤害。"
+  },
+  "TravelerSTSMod:Tide": {
+    "NAME": "潮汐",
+    "DESCRIPTION": "回合开始，抽牌前，选抽牌堆至多 !M! 卡 travelerstsmod:寄存 至弃牌堆1卡。"
+  },
+  "TravelerSTSMod:MemoryPieces": {
+    "NAME": "记忆碎片",
+    "DESCRIPTION": "获得 !M! 费， 消耗 。被 travelerstsmod:寄存 时，获得 !M! 费。"
+  },
+  "TravelerSTSMod:Parasites": {
+  "NAME": "蛊虫",
+  "DESCRIPTION": "造成 !D! 点伤害X次，若杀死了敌人， travelerstsmod:寄存 至弃牌堆 1 张卡。被 travelerstsmod:寄存 时，在本场战斗中伤害+ !M! 。"
   }
 }
